@@ -1,2 +1,102 @@
-# Shopifystore
-a new perfumes and cosmitics store
+# GCC Perfumes & Cosmetics — Shopify Store
+
+![Status](https://img.shields.io/badge/status-planning-lightgrey)
+![Phase](https://img.shields.io/badge/phase-0%20%E2%80%94%20setup%20%26%20foundation-blue)
+![License](https://img.shields.io/badge/license-proprietary-red)
+
+A Shopify build for a perfumes & cosmetics launch across the GCC — Arabic-first, English secondary. This repository is the single source of truth for the build: code, documentation, and the live tracker of what's blocking launch.
+
+## Contents
+
+- [Overview](#overview)
+- [Roles & working model](#roles--working-model)
+- [How a build task flows](#how-a-build-task-flows)
+- [Customer journey](#customer-journey)
+- [Tech stack](#tech-stack)
+- [Repository structure](#repository-structure)
+- [Documentation](#documentation)
+- [Current status](#current-status)
+- [License](#license)
+
+## Overview
+
+The store targets one or more GCC markets with a native Shopify storefront, a regional payment gateway, WhatsApp + Klaviyo–driven CRM, and third-party fulfillment at launch. The full build plan — phases, timelines, complexity levels, and open decisions — lives in [`docs/roadmap.md`](docs/roadmap.md).
+
+## Roles & working model
+
+| Who | Role | Responsible for | Out of scope |
+|---|---|---|---|
+| **Amal** | Product owner / moderator | Defines requirements, tests every build on staging, approves before it goes live, runs day-to-day store content | Writing code |
+| **Claude** | Developer | Builds/edits the theme, custom apps, and automations; pushes to GitHub; documents everything so it isn't locked to one person | Business or budget decisions |
+| **Faisal** | Financial owner | Budget, supplier payments, margins, P&L, ROI tracking, payment settlement reconciliation | Code or moderation |
+
+## How a build task flows
+
+```mermaid
+flowchart LR
+    A["Requirement described\nin plain language"] --> B["Claude builds it on\na dev/staging branch"]
+    B --> C["Amal tests on\nthe staging store"]
+    C --> D{Approved?}
+    D -- No --> B
+    D -- Yes --> E["Merge to main,\ndeploy live"]
+```
+
+Every change is documented — see [`CONTRIBUTING.md`](CONTRIBUTING.md) for branching, commit, and review conventions.
+
+## Customer journey
+
+Every phase of the build exists to make one of these eight steps work reliably — nothing is built for its own sake.
+
+```mermaid
+flowchart LR
+    Browse --> Cart --> Checkout --> Payment["Payment confirmed"] --> Fulfillment --> Delivery --> Rating --> Retention["Retention (CRM)"]
+```
+
+## Tech stack
+
+| Layer | Choice | Notes |
+|---|---|---|
+| Storefront | Shopify (Online Store 2.0), RTL-ready theme | Arabic-first, English secondary |
+| Catalog | Matrixify + Google Sheets master catalog | Owned by Amal, outside this repo |
+| Payments | Regional gateway — MyFatoorah / Tap / PayTabs / Telr | Hosted checkout, keeps card data out of PCI scope |
+| CRM / email | Klaviyo | Native Shopify integration |
+| Messaging | WhatsApp Business API + Zoko/WATI | Automated templated messages, checkout links in-chat |
+| Delivery | Third-party courier (Aramex / iMile / local) at launch | In-house delivery app is a later, separate build |
+| Reporting | Shopify analytics + Looker Studio | No custom BI dashboard pre-launch |
+
+Full detail in [`docs/architecture.md`](docs/architecture.md) and [`docs/integrations.md`](docs/integrations.md).
+
+## Repository structure
+
+```
+theme/              Shopify theme (Online Store 2.0) — scaffolded, awaiting brand kit
+apps/                Custom (L3) apps/services — created as needed
+docs/                Roadmap, checklists, integration tracker, architecture
+.github/             PR/issue templates, CI workflows
+.env.example         Every env var a custom app needs — no real values
+```
+
+## Documentation
+
+| Document | Purpose |
+|---|---|
+| [`docs/roadmap.md`](docs/roadmap.md) | Full phased build plan, timeline, and complexity levels (L1/L2/L3) |
+| [`docs/setup-checklist.md`](docs/setup-checklist.md) | Live blocker checklist — accounts, approvals, and decisions needed, by owner |
+| [`docs/integrations.md`](docs/integrations.md) | Every third-party integration: purpose, requirements, status |
+| [`docs/architecture.md`](docs/architecture.md) | Planned repo structure and tech stack in detail |
+| [`CONTRIBUTING.md`](CONTRIBUTING.md) | Branching, workflow, and commit conventions |
+| [`CHANGELOG.md`](CHANGELOG.md) | Notable changes to this repository, by date |
+
+## Current status
+
+**Phase 0 — Setup & Foundation.** Repository scaffolding is in place. Blocked on:
+
+1. **Brand kit** (name, logo, color palette) from Amal — blocks the theme build
+2. **Shopify store access** (Admin API token or theme access) — needed before real theme code can be pushed
+3. **WhatsApp Business API** and **payment gateway merchant KYC** approvals — long lead times, should be started in parallel regardless of the above
+
+See [`docs/setup-checklist.md`](docs/setup-checklist.md) for the complete, owner-tagged list.
+
+## License
+
+Proprietary — all rights reserved. This repository and its contents are not licensed for reuse, distribution, or public disclosure without explicit permission from the project owner.

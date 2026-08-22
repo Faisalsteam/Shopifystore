@@ -1,0 +1,22 @@
+# Secrets
+.env
+.env.local
+
+# Node (Shopify CLI, theme tooling, future custom apps)
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Shopify CLI
+.shopify/
+*.theme-check-cache.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Build output
+dist/
+build/

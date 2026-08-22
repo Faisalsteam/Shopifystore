@@ -1,0 +1,4 @@
+# Default reviewer for all changes.
+# Amal approves on staging per the workflow in CONTRIBUTING.md;
+# this file governs GitHub's PR review assignment, not the approval process itself.
+* @Faisalsteam
