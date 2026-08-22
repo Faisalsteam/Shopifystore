@@ -8,6 +8,8 @@ This repo follows the flow defined in the roadmap (`docs/roadmap.md`):
 4. **Amal approves**
 5. **Merge to `main`**, deploy live
 
+Theme changes reach the store via Shopify's GitHub integration (the store pulls from this repo — see `docs/deployment.md` for setup and branch mapping), not a manual push.
+
 ## Branching
 
 - `main` — live/production. Only merged into after Amal's approval.

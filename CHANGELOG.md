@@ -4,6 +4,11 @@ Notable changes to this repository. Dates are UTC.
 
 ## Unreleased
 
+### Added — 2026-08-22 (later)
+- `docs/deployment.md` — documents that Claude's development session cannot reach `*.myshopify.com` (network policy), so `theme/` deploys via Shopify's native GitHub integration (store pulls from this repo) instead of a Shopify CLI push. Includes setup steps and branch mapping.
+- Received the store domain (`9gucqc-qy.myshopify.com`) and a Theme Access password; recorded in `docs/setup-checklist.md` and `docs/integrations.md`. The password isn't used by this deployment method — kept for any future local/CLI use, revocable from the store admin at any time.
+- Updated `theme/README.md`, `CONTRIBUTING.md`, and root `README.md` to point at the GitHub-integration deployment flow.
+
 ### Added — 2026-08-22
 - Vendored [Shopify Dawn](https://github.com/Shopify/dawn) `v16.0.0` into `theme/` as the real base theme (replaces the empty directory scaffold). License and release notes kept in `theme/vendor/`.
 - Wired `layout/theme.liquid` to set `dir="rtl"`/`dir="ltr"` automatically based on the active storefront language, so the layout is RTL-ready at the document level as soon as Arabic is added as a shop language.

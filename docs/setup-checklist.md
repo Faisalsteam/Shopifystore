@@ -43,7 +43,8 @@ All bilingual (AR/EN), written Arabic-first.
 
 ## What Claude (developer) needs handed over, once the above unblock
 
-- [ ] **Next up:** Shopify store domain + a Theme Access password (install the free "Theme Access" app on the trial store, generate a password) — see root `README.md` for exact steps. This is what's blocking pushing `theme/` to the actual store.
+- [x] ~~Shopify store domain + Theme Access password~~ — received (`9gucqc-qy.myshopify.com`). Not usable from this development session (network policy blocks direct Shopify API access — see `docs/deployment.md`); deployment instead goes through Shopify's GitHub integration.
+- [ ] **Next up:** connect the store to this GitHub repo (**Online Store → Themes → Add theme → Connect from GitHub**, repo `Faisalsteam/Shopifystore`, folder `theme`) — exact steps and branch mapping in `docs/deployment.md`
 - [ ] Klaviyo API key
 - [ ] Payment gateway API credentials (after merchant approval)
 - [ ] WhatsApp BSP (Zoko/WATI) API credentials

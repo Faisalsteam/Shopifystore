@@ -4,7 +4,7 @@ Every third-party system this build touches: what it's for, what it needs from u
 
 | Integration | Purpose | Level | What it needs from us | Status |
 |---|---|---|---|---|
-| **Shopify** | Storefront, catalog, checkout | L1 | Store URL + Admin API token or theme access | Not connected |
+| **Shopify** | Storefront, catalog, checkout | L1 | Store domain — have it (`9gucqc-qy.myshopify.com`); deployed via GitHub integration, not an API token (see `docs/deployment.md`) | Awaiting "Connect from GitHub" in Shopify admin |
 | **Theme** — Shopify Dawn v16.0.0 (vendored in `theme/`) | Storefront presentation | L1/L2 | Brand kit (name, logo, colors) to theme it; Arabic locale content | Base theme in place, unbranded — blocked on brand kit |
 | **Matrixify** | Bulk product upload, variants, metafields | L2 | Shopify app install; master catalog in Google Sheets (Amal's) | Not started |
 | **Payment gateway** — MyFatoorah / Tap Payments / PayTabs / Telr | Checkout payment, local rails (KNET, mada, etc.) | L2 | Launch scope is now **all GCC markets** (not one country) — needs a coverage comparison across all four providers for UAE, Saudi, Kuwait, Bahrain, Qatar, Oman before picking one (or more than one); merchant KYC approval per country is the slow part, start early | Not started — coverage comparison needed |

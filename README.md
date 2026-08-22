@@ -104,6 +104,7 @@ docs/seo/            SEO Content Writer agent output — keyword strategy, conte
 | [`docs/integrations.md`](docs/integrations.md) | Every third-party integration: purpose, requirements, status |
 | [`docs/architecture.md`](docs/architecture.md) | Planned repo structure and tech stack in detail |
 | [`docs/agents/`](docs/agents/README.md) | Charters for the 5 AI agent roles and how they operate unattended |
+| [`docs/deployment.md`](docs/deployment.md) | How `theme/` reaches the actual store (GitHub → Shopify), setup steps, branch mapping |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | Branching, workflow, and commit conventions |
 | [`CHANGELOG.md`](CHANGELOG.md) | Notable changes to this repository, by date |
 
@@ -113,7 +114,7 @@ docs/seo/            SEO Content Writer agent output — keyword strategy, conte
 
 - **Launch scope confirmed:** all GCC markets (not a single-country launch)
 - **Theme in place:** `theme/` is Shopify's Dawn v16.0.0, vendored in full, with RTL wired at the document level (`dir="rtl"`/`dir="ltr"` follows the active storefront language automatically) — see [`theme/README.md`](theme/README.md). It's unbranded — no logo/colors/fonts yet.
-- **Next blocker — store connection:** to push this theme to the actual trial store, I need the store domain and a **Theme Access password** (install the free "Theme Access" app on the store, from Amal or Faisal's admin, and generate a password — no developer account needed). See [`docs/setup-checklist.md`](docs/setup-checklist.md#what-claude-developer-needs-handed-over-once-the-above-unblock).
+- **Store domain received** (`9gucqc-qy.myshopify.com`). Claude's development session can't reach Shopify's API directly (network policy), so deployment goes through Shopify's native GitHub integration instead of a CLI push — see [`docs/deployment.md`](docs/deployment.md). **Next step:** connect the store to this repo from the Shopify admin (Online Store → Themes → Add theme → Connect from GitHub).
 - **Also blocking:** brand kit (name, logo, color palette) from Amal — needed before the theme can be branded.
 - **Long lead time, start now regardless:** WhatsApp Business API approval and payment gateway merchant KYC — now evaluated against all-GCC coverage, not one country.
 

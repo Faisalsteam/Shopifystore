@@ -14,20 +14,16 @@ This is an unbranded starting point, not the finished storefront. What's done vs
 - Brand kit not applied yet: no logo, no color palette, no fonts — currently running Dawn's stock look
 - No Arabic locale file (`locales/ar.json`) — Dawn ships English and other locales but not Arabic by default; content needs to be written Arabic-first per the roadmap, not machine-translated
 - CSS/section-by-section RTL audit not done — the `dir` attribute is wired at the document level, but every custom element (cart drawer, WhatsApp widget, reviews, checkout customizations) still needs to be visually checked in RTL as it's built or modified, per the roadmap's reality check
-- Not yet connected to a live Shopify store — see the root `README.md` status section for what unblocks this
+- Not yet connected to a live Shopify store — see `../docs/deployment.md` for how that connection works and its current status
 
-## Working on it locally
+## How this gets to the store
 
-Requires the [Shopify CLI](https://shopify.dev/docs/api/shopify-cli) and a way to authenticate against the store (see root `README.md` for the current plan — a Theme Access app password, generated from the store's admin).
+Deployment is **GitHub → Shopify**, not a CLI push from Claude's development session (which can't reach `*.myshopify.com` — see `../docs/deployment.md` for why). Push changes to the connected branch in this repo and the corresponding theme in the Shopify admin updates automatically; nothing goes live until it's published from there. Full setup steps and branch mapping are in `../docs/deployment.md`.
+
+If you're working on this theme from a machine with normal internet access (not this session), the standard [Shopify CLI](https://shopify.dev/docs/api/shopify-cli) flow still works for local preview:
 
 ```
 shopify theme dev --store <your-store>.myshopify.com
-```
-
-This serves the theme locally against live store data without touching the published theme. Push to a new unpublished theme on the store with:
-
-```
-shopify theme push --unpublished --store <your-store>.myshopify.com
 ```
 
 Never push straight to the live/published theme — follow the branch → staging theme → Amal approves → publish flow in `../CONTRIBUTING.md`.
