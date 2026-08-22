@@ -13,3 +13,12 @@ Notable changes to this repository. Dates are UTC.
 - `theme/` — Shopify Online Store 2.0 directory scaffold, awaiting brand kit and store access.
 - `.env.example` — documents required integration credentials without real values.
 - `.github/` — pull request template, build-task issue template, Theme Check CI workflow.
+
+### Added — 2026-08-22 (2)
+- `docs/agents/` — charters for 5 AI agent roles (Designer, Chatbot/Call Center, Dispatcher, Marketing Agency, SEO Content Writer AR/EN): mission, scope, current-phase deliverables, blockers, and operating cadence.
+- `docs/design/` — brand kit brief template and brand-agnostic section wireframes (homepage, PDP, collection, cart drawer), RTL-annotated.
+- `docs/support/` — bilingual (AR/EN) WhatsApp conversation flows, FAQ, and a bot-vs-human escalation matrix.
+- `docs/dispatch/` — fulfillment SOP and courier selection/exception-handling matrix.
+- `docs/marketing/` — content calendar template and Klaviyo lifecycle flow specs (welcome, abandoned cart, post-purchase, win-back, promo).
+- `docs/seo/` — bilingual keyword strategy framework, content templates (meta tags, product descriptions), and sample blog posts in Arabic and English.
+- `README.md`, `docs/architecture.md`, `docs/setup-checklist.md` updated to reference the new agent roles and their output locations.
