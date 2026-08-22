@@ -5,6 +5,11 @@ Notable changes to this repository. Dates are UTC.
 ## Unreleased
 
 ### Added — 2026-08-22
+- Vendored [Shopify Dawn](https://github.com/Shopify/dawn) `v16.0.0` into `theme/` as the real base theme (replaces the empty directory scaffold). License and release notes kept in `theme/vendor/`.
+- Wired `layout/theme.liquid` to set `dir="rtl"`/`dir="ltr"` automatically based on the active storefront language, so the layout is RTL-ready at the document level as soon as Arabic is added as a shop language.
+- Confirmed launch scope: **all GCC markets** (not a single country) — updated `docs/roadmap.md`, `docs/integrations.md`, and `docs/setup-checklist.md` to reflect that the payment gateway and courier choice now need full-GCC coverage, not single-country.
+
+### Added — 2026-08-22 (earlier)
 - Initial repository foundation: README, `CONTRIBUTING.md`, `LICENSE`.
 - `docs/roadmap.md` — full phased build plan transcribed from the roadmap document (phases, timeline, complexity levels, open decisions).
 - `docs/setup-checklist.md` — live, owner-tagged blocker checklist.

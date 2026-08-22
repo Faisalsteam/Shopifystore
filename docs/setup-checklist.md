@@ -8,13 +8,13 @@ Live blocker list, by owner. Check items off in PRs/issues as they close — thi
 - [ ] Logo
 - [ ] Color palette
 - [ ] Domain purchased
-- [ ] Theme selected (must be RTL-ready — see the *Theme* row in `docs/integrations.md`)
+- [x] ~~Theme selected~~ — Shopify Dawn v16.0.0 vendored in `theme/`, RTL-wired at the layout level; still unbranded (see the *Theme* row in `docs/integrations.md`)
 
 ## Faisal — feeds Phase 0 (merchant/courier setup) and Phase 3 (localization)
 
-- [ ] Which GCC country(ies) launch first (decides payment gateway + courier)
-- [ ] Payment gateway shortlist confirmed (MyFatoorah / Tap / PayTabs / Telr)
-- [ ] Shipping/courier shortlist confirmed (Aramex / iMile / local courier)
+- [x] ~~Which GCC country(ies) launch first~~ — confirmed: **all GCC markets**. Still open: which gateway(s)/courier(s) actually cover all six at acceptable cost, see `docs/integrations.md`
+- [ ] Payment gateway shortlist confirmed (MyFatoorah / Tap / PayTabs / Telr) — evaluate against full-GCC coverage, not single-country
+- [ ] Shipping/courier shortlist confirmed (Aramex / iMile / local courier) — same, full-GCC coverage
 - [ ] Taxes
 - [ ] Packaging supplier + costing
 - [ ] Initial + monthly budget envelope
@@ -43,7 +43,7 @@ All bilingual (AR/EN), written Arabic-first.
 
 ## What Claude (developer) needs handed over, once the above unblock
 
-- [ ] Shopify store URL + Admin API access token or theme access (to push theme code)
+- [ ] **Next up:** Shopify store domain + a Theme Access password (install the free "Theme Access" app on the trial store, generate a password) — see root `README.md` for exact steps. This is what's blocking pushing `theme/` to the actual store.
 - [ ] Klaviyo API key
 - [ ] Payment gateway API credentials (after merchant approval)
 - [ ] WhatsApp BSP (Zoko/WATI) API credentials

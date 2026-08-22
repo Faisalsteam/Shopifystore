@@ -5,9 +5,9 @@ Every third-party system this build touches: what it's for, what it needs from u
 | Integration | Purpose | Level | What it needs from us | Status |
 |---|---|---|---|---|
 | **Shopify** | Storefront, catalog, checkout | L1 | Store URL + Admin API token or theme access | Not connected |
-| **Theme** (RTL-ready, e.g. an Online Store 2.0 theme) | Storefront presentation | L1/L2 | Brand kit (name, logo, colors) | Blocked on brand kit |
+| **Theme** — Shopify Dawn v16.0.0 (vendored in `theme/`) | Storefront presentation | L1/L2 | Brand kit (name, logo, colors) to theme it; Arabic locale content | Base theme in place, unbranded — blocked on brand kit |
 | **Matrixify** | Bulk product upload, variants, metafields | L2 | Shopify app install; master catalog in Google Sheets (Amal's) | Not started |
-| **Payment gateway** — MyFatoorah / Tap Payments / PayTabs / Telr (pick one based on launch country) | Checkout payment, local rails (KNET, mada, etc.) | L2 | Country decision, merchant KYC approval (slow — start early), API credentials post-approval | Not started |
+| **Payment gateway** — MyFatoorah / Tap Payments / PayTabs / Telr | Checkout payment, local rails (KNET, mada, etc.) | L2 | Launch scope is now **all GCC markets** (not one country) — needs a coverage comparison across all four providers for UAE, Saudi, Kuwait, Bahrain, Qatar, Oman before picking one (or more than one); merchant KYC approval per country is the slow part, start early | Not started — coverage comparison needed |
 | **WhatsApp Business API** (via Meta) + BSP (**Zoko** or **WATI**) | Automated templated messages, checkout links in-chat | L2/L3 | Meta Business Manager, WhatsApp Business API approval (slow — start early), BSP account | Not started |
 | **Klaviyo** | Email CRM: capture, segment, trigger/send, report | L1/L2 | Account + API key | Not started |
 | **Shopify Flow** | Wiring simple triggers (e.g. Klaviyo → WhatsApp) | L1 | Native to Shopify, no separate account | N/A until store exists |
@@ -29,6 +29,6 @@ Every third-party system this build touches: what it's for, what it needs from u
 
 ## Decisions still open (blocks locking these in)
 
-1. Launch country(ies) → payment gateway + courier
+1. **Launch scope confirmed as all GCC markets** — still need: which gateway(s)/courier(s) actually cover all six countries at acceptable cost, vs. a per-country split
 2. Klaviyo + Zoko/WATI budget tolerance (both usage-based)
-3. Brand name/colors → theme selection
+3. Brand name/colors → theme branding (base theme itself is no longer blocking — see the Theme row above)

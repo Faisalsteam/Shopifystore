@@ -117,9 +117,9 @@ It automates the sending once a rule is approved — it doesn't replace Amal's j
 
 ## Open decisions (before work starts)
 
-1. **Which GCC country(ies) launch first** — determines payment gateway and courier partner
+1. ~~Which GCC country(ies) launch first~~ — **confirmed: all GCC markets.** Now need a gateway/courier that actually covers all six countries at acceptable cost — see `docs/integrations.md`
 2. **Klaviyo + Zoko/WATI vs. alternatives** — confirm budget tolerance, both usage-based
-3. **Brand name and colors** — currently blocking the store build phase
+3. **Brand name and colors** — currently blocking theme branding (base theme itself is in place — see `docs/setup-checklist.md`)
 4. **Initial + monthly budget envelope** — so tool choices are picked against real numbers
 
 ## Immediate action items

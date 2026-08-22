@@ -40,12 +40,13 @@ docs/seo/                SEO Content Writer agent output (keyword strategy, temp
 
 ## Theme scaffold status
 
-`theme/` currently holds the standard Online Store 2.0 directory structure with no theme installed yet. It's waiting on:
-1. Brand kit (name, logo, colors) from Amal
-2. An RTL-ready base theme selection
-3. Shopify store access (to pull/push via Shopify CLI)
+`theme/` is Shopify's [Dawn](https://github.com/Shopify/dawn) `v16.0.0`, vendored in full, with `dir="rtl"`/`dir="ltr"` wired at the document level based on the active storefront language. It's unbranded — running Dawn's stock look with no logo/colors/fonts applied — and not yet connected to a live store. See `theme/README.md` for exact status and local dev commands. Still open:
+1. Brand kit (name, logo, colors) from Amal — needed to theme it
+2. Arabic locale content (`locales/ar.json`) — written Arabic-first, not machine-translated
+3. Section-by-section RTL visual audit as each custom piece is built
+4. Shopify store access (to pull/push via Shopify CLI)
 
-Once those land, the actual theme (either a purchased/RTL-ready theme or a fork of a base like Dawn) gets committed here and developed via `shopify theme dev` against a staging store, per the workflow in `CONTRIBUTING.md`.
+Development happens via `shopify theme dev` against a staging store, per the workflow in `CONTRIBUTING.md`.
 
 ## CI
 

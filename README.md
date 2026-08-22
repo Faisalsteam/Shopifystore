@@ -109,11 +109,13 @@ docs/seo/            SEO Content Writer agent output — keyword strategy, conte
 
 ## Current status
 
-**Phase 0 — Setup & Foundation.** Repository scaffolding is in place. Blocked on:
+**Phase 0 — Setup & Foundation.**
 
-1. **Brand kit** (name, logo, color palette) from Amal — blocks the theme build
-2. **Shopify store access** (Admin API token or theme access) — needed before real theme code can be pushed
-3. **WhatsApp Business API** and **payment gateway merchant KYC** approvals — long lead times, should be started in parallel regardless of the above
+- **Launch scope confirmed:** all GCC markets (not a single-country launch)
+- **Theme in place:** `theme/` is Shopify's Dawn v16.0.0, vendored in full, with RTL wired at the document level (`dir="rtl"`/`dir="ltr"` follows the active storefront language automatically) — see [`theme/README.md`](theme/README.md). It's unbranded — no logo/colors/fonts yet.
+- **Next blocker — store connection:** to push this theme to the actual trial store, I need the store domain and a **Theme Access password** (install the free "Theme Access" app on the store, from Amal or Faisal's admin, and generate a password — no developer account needed). See [`docs/setup-checklist.md`](docs/setup-checklist.md#what-claude-developer-needs-handed-over-once-the-above-unblock).
+- **Also blocking:** brand kit (name, logo, color palette) from Amal — needed before the theme can be branded.
+- **Long lead time, start now regardless:** WhatsApp Business API approval and payment gateway merchant KYC — now evaluated against all-GCC coverage, not one country.
 
 See [`docs/setup-checklist.md`](docs/setup-checklist.md) for the complete, owner-tagged list.
 
