@@ -114,8 +114,8 @@ docs/seo/            SEO Content Writer agent output — keyword strategy, conte
 
 - **Launch scope confirmed:** all GCC markets (not a single-country launch)
 - **Theme in place:** `theme/` is Shopify's Dawn v16.0.0, vendored in full, with RTL wired at the document level (`dir="rtl"`/`dir="ltr"` follows the active storefront language automatically) — see [`theme/README.md`](theme/README.md). It's unbranded — no logo/colors/fonts yet.
-- **Store domain received** (`9gucqc-qy.myshopify.com`). Claude's development session can't reach Shopify's API directly (network policy), so deployment goes through Shopify's native GitHub integration instead of a CLI push — see [`docs/deployment.md`](docs/deployment.md). **Next step:** connect the store to this repo from the Shopify admin (Online Store → Themes → Add theme → Connect from GitHub).
-- **Also blocking:** brand kit (name, logo, color palette) from Amal — needed before the theme can be branded.
+- **Store connected.** `9gucqc-qy.myshopify.com` is linked to `theme/` via Shopify's native GitHub integration (deployment doesn't go through the Shopify API — Claude's session can't reach it — the store pulls from this repo instead; see [`docs/deployment.md`](docs/deployment.md)). Preview confirmed working.
+- **Now the only real blocker:** brand kit (name, logo, color palette) from Amal — theme, RTL wiring, and store connection are all in place and waiting on it.
 - **Long lead time, start now regardless:** WhatsApp Business API approval and payment gateway merchant KYC — now evaluated against all-GCC coverage, not one country.
 
 See [`docs/setup-checklist.md`](docs/setup-checklist.md) for the complete, owner-tagged list.

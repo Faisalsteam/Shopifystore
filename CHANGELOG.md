@@ -4,6 +4,9 @@ Notable changes to this repository. Dates are UTC.
 
 ## Unreleased
 
+### Confirmed — 2026-08-22 (later still)
+- Store `9gucqc-qy.myshopify.com` connected to `theme/` via Shopify's GitHub integration — preview theme opens correctly. Deployment pipeline (repo → store) is now live end to end.
+
 ### Added — 2026-08-22 (later)
 - `docs/deployment.md` — documents that Claude's development session cannot reach `*.myshopify.com` (network policy), so `theme/` deploys via Shopify's native GitHub integration (store pulls from this repo) instead of a Shopify CLI push. Includes setup steps and branch mapping.
 - Received the store domain (`9gucqc-qy.myshopify.com`) and a Theme Access password; recorded in `docs/setup-checklist.md` and `docs/integrations.md`. The password isn't used by this deployment method — kept for any future local/CLI use, revocable from the store admin at any time.

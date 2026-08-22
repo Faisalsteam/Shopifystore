@@ -8,6 +8,8 @@ Claude's development environment runs in a network-restricted session and cannot
 
 If a custom (L3) app ever needs to call the Shopify Admin API directly (e.g. a webhook relay — see `docs/architecture.md`), that code runs on its own hosting, not from this development session, so it isn't affected by this restriction.
 
+**Status: connected and confirmed working** (2026-08-22) — `9gucqc-qy.myshopify.com` is linked to `theme/` on the current work branch via Shopify's GitHub integration; the preview theme opens correctly.
+
 ## One-time setup (Amal or Faisal, in the Shopify admin)
 
 1. **Online Store → Themes → Add theme → Connect from GitHub**

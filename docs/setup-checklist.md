@@ -44,7 +44,8 @@ All bilingual (AR/EN), written Arabic-first.
 ## What Claude (developer) needs handed over, once the above unblock
 
 - [x] ~~Shopify store domain + Theme Access password~~ — received (`9gucqc-qy.myshopify.com`). Not usable from this development session (network policy blocks direct Shopify API access — see `docs/deployment.md`); deployment instead goes through Shopify's GitHub integration.
-- [ ] **Next up:** connect the store to this GitHub repo (**Online Store → Themes → Add theme → Connect from GitHub**, repo `Faisalsteam/Shopifystore`, folder `theme`) — exact steps and branch mapping in `docs/deployment.md`
+- [x] ~~Connect the store to this GitHub repo~~ — done. `9gucqc-qy.myshopify.com` is now connected to `theme/` on this branch via Shopify's GitHub integration; preview confirmed working (2026-08-22). Future pushes to the connected branch update it automatically.
+- [ ] **Next up:** brand kit (name, logo, colors) from Amal — this is the next real blocker; everything else (theme, RTL wiring, store connection) is in place and waiting on it
 - [ ] Klaviyo API key
 - [ ] Payment gateway API credentials (after merchant approval)
 - [ ] WhatsApp BSP (Zoko/WATI) API credentials
