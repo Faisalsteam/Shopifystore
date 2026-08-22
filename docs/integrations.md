@@ -4,10 +4,10 @@ Every third-party system this build touches: what it's for, what it needs from u
 
 | Integration | Purpose | Level | What it needs from us | Status |
 |---|---|---|---|---|
-| **Shopify** | Storefront, catalog, checkout | L1 | Store domain — have it (`9gucqc-qy.myshopify.com`); deployed via GitHub integration, not an API token (see `docs/deployment.md`) | Awaiting "Connect from GitHub" in Shopify admin |
+| **Shopify** | Storefront, catalog, checkout | L1 | Store domain (`9gucqc-qy.myshopify.com`); deployed via GitHub integration, not an API token (see `docs/deployment.md`) | Connected, preview confirmed working |
 | **Theme** — Shopify Dawn v16.0.0 (vendored at repo root, see `THEME.md`) | Storefront presentation | L1/L2 | Brand kit (name, logo, colors) to theme it; Arabic locale content | Connected to the live store, confirmed working — unbranded, blocked on brand kit |
-| **Matrixify** | Bulk product upload, variants, metafields | L2 | Shopify app install; master catalog in Google Sheets (Amal's) | Not started |
-| **Payment gateway** — MyFatoorah / Tap Payments / PayTabs / Telr | Checkout payment, local rails (KNET, mada, etc.) | L2 | Launch scope is now **all GCC markets** (not one country) — needs a coverage comparison across all four providers for UAE, Saudi, Kuwait, Bahrain, Qatar, Oman before picking one (or more than one); merchant KYC approval per country is the slow part, start early | Not started — coverage comparison needed |
+| **Matrixify** | Bulk product upload, variants, metafields | L2 | Shopify app install; master catalog in Google Sheets (Amal's) | Draft catalog ready (2,855 products parsed) — see `docs/catalog-import.md`; needs prices, inventory, photos before real import |
+| **Payment gateway** — MyFatoorah / Tap Payments / PayTabs / Telr | Checkout payment, local rails (KNET, mada, etc.) | L2 | Coverage comparison ready (`docs/payment-gateway-comparison.md`) — final pick + direct rate quotes still needed; merchant KYC approval per country is the slow part, start early | Comparison ready, decision + quotes pending |
 | **WhatsApp Business API** (via Meta) + BSP (**Zoko** or **WATI**) | Automated templated messages, checkout links in-chat | L2/L3 | Meta Business Manager, WhatsApp Business API approval (slow — start early), BSP account | Not started |
 | **Klaviyo** | Email CRM: capture, segment, trigger/send, report | L1/L2 | Account + API key | Not started |
 | **Shopify Flow** | Wiring simple triggers (e.g. Klaviyo → WhatsApp) | L1 | Native to Shopify, no separate account | N/A until store exists |

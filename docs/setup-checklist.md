@@ -13,7 +13,7 @@ Live blocker list, by owner. Check items off in PRs/issues as they close — thi
 ## Faisal — feeds Phase 0 (merchant/courier setup) and Phase 3 (localization)
 
 - [x] ~~Which GCC country(ies) launch first~~ — confirmed: **all GCC markets**. Still open: which gateway(s)/courier(s) actually cover all six at acceptable cost, see `docs/integrations.md`
-- [ ] Payment gateway shortlist confirmed (MyFatoorah / Tap / PayTabs / Telr) — evaluate against full-GCC coverage, not single-country
+- [ ] Payment gateway shortlist confirmed (MyFatoorah / Tap / PayTabs / Telr) — comparison ready in `docs/payment-gateway-comparison.md`, decision + direct rate quotes still needed
 - [ ] Shipping/courier shortlist confirmed (Aramex / iMile / local courier) — same, full-GCC coverage
 - [ ] Taxes
 - [ ] Packaging supplier + costing
@@ -33,9 +33,10 @@ Live blocker list, by owner. Check items off in PRs/issues as they close — thi
 
 ## Content that blocks payment gateway approval
 
-- [ ] Terms & Conditions
-- [ ] Privacy Policy
-- [ ] Refund / Shipping Policy
+- [x] ~~Terms & Conditions~~ — draft ready, bilingual: `content/legal/{ar,en}/terms-and-conditions.md`
+- [x] ~~Privacy Policy~~ — draft ready, bilingual: `content/legal/{ar,en}/privacy-policy.md`
+- [x] ~~Refund / Shipping Policy~~ — draft ready, bilingual: `content/legal/{ar,en}/refund-shipping-policy.md`
+- [ ] **All three need a licensed Kuwait/GCC lawyer's review before publishing** — see `content/legal/README.md` for exactly what's unverified (they're grounded in Kuwait Law No. 39/2014, which is solid; a couple of newer regulatory claims found in research were deliberately left out as unconfirmed — see that README)
 - [ ] FAQ
 - [ ] Trade license / commercial registration (varies by launch country)
 
@@ -50,7 +51,7 @@ All bilingual (AR/EN), written Arabic-first.
 - [ ] Payment gateway API credentials (after merchant approval)
 - [ ] WhatsApp BSP (Zoko/WATI) API credentials
 - [ ] Google Maps API key
-- [ ] Master product catalog (Google Sheet, per the Phase 2 section of `docs/roadmap.md`)
+- [x] ~~Master product catalog~~ — 2,855-row supplier list received and parsed into a Matrixify-ready draft workbook (English fields, Arabic title draft, review-flags sheet); delivered directly, not committed to this repo per the Google Sheets convention below — see `docs/catalog-import.md` for the methodology. Still needed: prices, inventory counts, and product photos (not something that can be generated — see that doc)
 
 None of these should ever be committed to this repo — see `.env.example` and `docs/integrations.md` for how secrets are handled.
 

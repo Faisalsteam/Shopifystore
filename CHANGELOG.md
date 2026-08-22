@@ -4,6 +4,12 @@ Notable changes to this repository. Dates are UTC.
 
 ## Unreleased
 
+### Added — 2026-08-22 (parallel workstreams)
+- `docs/payment-gateway-comparison.md` — MyFatoorah / Tap Payments / PayTabs / Telr compared across all six GCC countries (coverage, local rails, reported fees, onboarding), with sourcing caveats and a recommendation to request direct rate quotes given the low reliability of third-party GCC payment-gateway pricing blogs.
+- `content/legal/` — bilingual (Arabic-first, English-adapted) draft Terms & Conditions, Privacy Policy, and Refund & Shipping Policy, grounded in Kuwait's Consumer Protection Law No. 39/2014. Explicitly flagged as drafts pending review by a licensed Kuwait/GCC lawyer; a newer "Decree 10/2026" claim found during research was deliberately excluded as unconfirmed (single, non-authoritative source) — see `content/legal/README.md`.
+- `docs/catalog-import.md` — methodology for turning the raw 2,855-item supplier price list into a Matrixify-ready product catalog: deterministic parsing (brand/size/concentration/gender) plus a best-effort Arabic title draft, with every low-confidence row flagged for review rather than guessed silently. The generated workbook (English import sheet, Arabic draft sheet, review-flags sheet) was delivered directly — per the roadmap, the master catalog lives in Amal's Google Sheet, not this repo.
+- Updated `docs/setup-checklist.md`, `docs/integrations.md`, and root `README.md` to reflect all three as delivered-but-needing-human-review, not finished.
+
 ### Fixed — 2026-08-22 (correction)
 - Moved the theme from a `theme/` subfolder to the **repo root** (`layout/`, `templates/`, `sections/`, `snippets/`, `assets/`, `config/`, `locales/`, `vendor/`, plus `THEME.md` replacing `theme/README.md`). Shopify's "Connect from GitHub" dialog has no subfolder option — it only reads the theme from the root of the selected branch, which is why the first connection attempt showed no theme at all. Updated all docs (`docs/deployment.md`, `docs/architecture.md`, `docs/setup-checklist.md`, `docs/integrations.md`, root `README.md`) and the Theme Check CI workflow to match.
 
