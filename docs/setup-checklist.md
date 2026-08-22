@@ -8,7 +8,7 @@ Live blocker list, by owner. Check items off in PRs/issues as they close — thi
 - [ ] Logo
 - [ ] Color palette
 - [ ] Domain purchased
-- [ ] Theme selected (must be RTL-ready — see `docs/integrations.md#theme`)
+- [ ] Theme selected (must be RTL-ready — see the *Theme* row in `docs/integrations.md`)
 
 ## Faisal — feeds Phase 0 (merchant/courier setup) and Phase 3 (localization)
 
@@ -48,6 +48,6 @@ All bilingual (AR/EN), written Arabic-first.
 - [ ] Payment gateway API credentials (after merchant approval)
 - [ ] WhatsApp BSP (Zoko/WATI) API credentials
 - [ ] Google Maps API key
-- [ ] Master product catalog (Google Sheet, per `docs/roadmap.md#phase-2`)
+- [ ] Master product catalog (Google Sheet, per the Phase 2 section of `docs/roadmap.md`)
 
 None of these should ever be committed to this repo — see `.env.example` and `docs/integrations.md` for how secrets are handled.

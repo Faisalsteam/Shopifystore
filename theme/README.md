@@ -8,7 +8,7 @@ This is intentionally empty of real theme code right now — see `docs/architect
 2. RTL-ready base theme selection
 3. Shopify store access
 
-Once unblocked, development happens via `shopify theme dev` against a staging store/theme, following the workflow in `../CONTRIBUTING.md`. Every custom element (cart drawer, WhatsApp widget, reviews, checkout customizations) gets tested in RTL before merge — see `docs/roadmap.md#phase-2`.
+Once unblocked, development happens via `shopify theme dev` against a staging store/theme, following the workflow in `../CONTRIBUTING.md`. Every custom element (cart drawer, WhatsApp widget, reviews, checkout customizations) gets tested in RTL before merge — see the Phase 2 section of `../docs/roadmap.md`.
 
 ## Directory structure (Online Store 2.0)
 
