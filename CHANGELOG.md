@@ -4,6 +4,9 @@ Notable changes to this repository. Dates are UTC.
 
 ## Unreleased
 
+### Fixed — 2026-08-22 (correction)
+- Moved the theme from a `theme/` subfolder to the **repo root** (`layout/`, `templates/`, `sections/`, `snippets/`, `assets/`, `config/`, `locales/`, `vendor/`, plus `THEME.md` replacing `theme/README.md`). Shopify's "Connect from GitHub" dialog has no subfolder option — it only reads the theme from the root of the selected branch, which is why the first connection attempt showed no theme at all. Updated all docs (`docs/deployment.md`, `docs/architecture.md`, `docs/setup-checklist.md`, `docs/integrations.md`, root `README.md`) and the Theme Check CI workflow to match.
+
 ### Confirmed — 2026-08-22 (later still)
 - Store `9gucqc-qy.myshopify.com` connected to `theme/` via Shopify's GitHub integration — preview theme opens correctly. Deployment pipeline (repo → store) is now live end to end.
 

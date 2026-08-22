@@ -8,7 +8,7 @@ Live blocker list, by owner. Check items off in PRs/issues as they close — thi
 - [ ] Logo
 - [ ] Color palette
 - [ ] Domain purchased
-- [x] ~~Theme selected~~ — Shopify Dawn v16.0.0 vendored in `theme/`, RTL-wired at the layout level; still unbranded (see the *Theme* row in `docs/integrations.md`)
+- [x] ~~Theme selected~~ — Shopify Dawn v16.0.0 vendored at the repo root (see `THEME.md`), RTL-wired at the layout level; still unbranded (see the *Theme* row in `docs/integrations.md`)
 
 ## Faisal — feeds Phase 0 (merchant/courier setup) and Phase 3 (localization)
 
@@ -44,7 +44,7 @@ All bilingual (AR/EN), written Arabic-first.
 ## What Claude (developer) needs handed over, once the above unblock
 
 - [x] ~~Shopify store domain + Theme Access password~~ — received (`9gucqc-qy.myshopify.com`). Not usable from this development session (network policy blocks direct Shopify API access — see `docs/deployment.md`); deployment instead goes through Shopify's GitHub integration.
-- [x] ~~Connect the store to this GitHub repo~~ — done. `9gucqc-qy.myshopify.com` is now connected to `theme/` on this branch via Shopify's GitHub integration; preview confirmed working (2026-08-22). Future pushes to the connected branch update it automatically.
+- [x] ~~Connect the store to this GitHub repo~~ — done. `9gucqc-qy.myshopify.com` is connected to this repo on this branch via Shopify's GitHub integration; preview confirmed working (2026-08-22). The theme had to be moved to the repo root for the connection to find it — Shopify's connector has no subfolder option (see `docs/deployment.md`). Future pushes to the connected branch update it automatically.
 - [ ] **Next up:** brand kit (name, logo, colors) from Amal — this is the next real blocker; everything else (theme, RTL wiring, store connection) is in place and waiting on it
 - [ ] Klaviyo API key
 - [ ] Payment gateway API credentials (after merchant approval)

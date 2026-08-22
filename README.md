@@ -81,7 +81,10 @@ Full detail in [`docs/architecture.md`](docs/architecture.md) and [`docs/integra
 ## Repository structure
 
 ```
-theme/              Shopify theme (Online Store 2.0) — scaffolded, awaiting brand kit
+layout/, templates/, sections/,
+snippets/, assets/, config/,
+locales/, vendor/    Shopify theme (Online Store 2.0) — at repo root,
+                     a Shopify GitHub-integration requirement, see THEME.md
 apps/                Custom (L3) apps/services — created as needed
 docs/                Roadmap, checklists, integration tracker, architecture
 docs/agents/         Charters for the 5 AI agent roles (Designer, Chatbot/Call Center,
@@ -104,7 +107,8 @@ docs/seo/            SEO Content Writer agent output — keyword strategy, conte
 | [`docs/integrations.md`](docs/integrations.md) | Every third-party integration: purpose, requirements, status |
 | [`docs/architecture.md`](docs/architecture.md) | Planned repo structure and tech stack in detail |
 | [`docs/agents/`](docs/agents/README.md) | Charters for the 5 AI agent roles and how they operate unattended |
-| [`docs/deployment.md`](docs/deployment.md) | How `theme/` reaches the actual store (GitHub → Shopify), setup steps, branch mapping |
+| [`THEME.md`](THEME.md) | The Shopify theme itself — base, status, directory structure |
+| [`docs/deployment.md`](docs/deployment.md) | How the theme reaches the actual store (GitHub → Shopify), setup steps, branch mapping |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | Branching, workflow, and commit conventions |
 | [`CHANGELOG.md`](CHANGELOG.md) | Notable changes to this repository, by date |
 
@@ -113,8 +117,8 @@ docs/seo/            SEO Content Writer agent output — keyword strategy, conte
 **Phase 0 — Setup & Foundation.**
 
 - **Launch scope confirmed:** all GCC markets (not a single-country launch)
-- **Theme in place:** `theme/` is Shopify's Dawn v16.0.0, vendored in full, with RTL wired at the document level (`dir="rtl"`/`dir="ltr"` follows the active storefront language automatically) — see [`theme/README.md`](theme/README.md). It's unbranded — no logo/colors/fonts yet.
-- **Store connected.** `9gucqc-qy.myshopify.com` is linked to `theme/` via Shopify's native GitHub integration (deployment doesn't go through the Shopify API — Claude's session can't reach it — the store pulls from this repo instead; see [`docs/deployment.md`](docs/deployment.md)). Preview confirmed working.
+- **Theme in place:** Shopify's Dawn v16.0.0, vendored in full at the repo root, with RTL wired at the document level (`dir="rtl"`/`dir="ltr"` follows the active storefront language automatically) — see [`THEME.md`](THEME.md). It's unbranded — no logo/colors/fonts yet.
+- **Store connected.** `9gucqc-qy.myshopify.com` is linked to this repo via Shopify's native GitHub integration (deployment doesn't go through the Shopify API — Claude's session can't reach it — the store pulls from this repo instead; see [`docs/deployment.md`](docs/deployment.md)). Preview confirmed working.
 - **Now the only real blocker:** brand kit (name, logo, color palette) from Amal — theme, RTL wiring, and store connection are all in place and waiting on it.
 - **Long lead time, start now regardless:** WhatsApp Business API approval and payment gateway merchant KYC — now evaluated against all-GCC coverage, not one country.
 

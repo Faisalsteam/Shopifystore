@@ -1,6 +1,6 @@
 # Deployment
 
-How `theme/` gets from this repository onto the actual Shopify store.
+How the theme (repo root — see `THEME.md`) gets from this repository onto the actual Shopify store.
 
 ## Why GitHub → Shopify, not Shopify CLI push
 
@@ -8,15 +8,18 @@ Claude's development environment runs in a network-restricted session and cannot
 
 If a custom (L3) app ever needs to call the Shopify Admin API directly (e.g. a webhook relay — see `docs/architecture.md`), that code runs on its own hosting, not from this development session, so it isn't affected by this restriction.
 
-**Status: connected and confirmed working** (2026-08-22) — `9gucqc-qy.myshopify.com` is linked to `theme/` on the current work branch via Shopify's GitHub integration; the preview theme opens correctly.
+**Status: connected and confirmed working** (2026-08-22) — `9gucqc-qy.myshopify.com` is linked to this repo on the current work branch via Shopify's GitHub integration; the preview theme opens correctly.
+
+## Important: the theme must live at the repo root
+
+Shopify's "Connect from GitHub" dialog (Account / Repository / Branch) has **no subfolder field** — it only ever reads the theme structure (`layout/`, `templates/`, `sections/`, `snippets/`, `assets/`, `config/`, `locales/`) from the root of the selected branch. It was first set up with the theme nested in a `theme/` subfolder, which is why the very first connection attempt showed no valid theme — that's fixed now; the theme lives at the repo root, alongside `docs/`, `README.md`, etc., which Shopify simply ignores.
 
 ## One-time setup (Amal or Faisal, in the Shopify admin)
 
 1. **Online Store → Themes → Add theme → Connect from GitHub**
 2. Authorize Shopify's GitHub connection if prompted, and select the **`Faisalsteam/Shopifystore`** repository
-3. Pick the branch to connect (see *Branch mapping* below)
-4. When asked for a theme directory/subfolder, enter **`theme`** — the theme files live there, not the repo root
-5. Shopify creates a new **unpublished** theme tied to that branch. Every push to that branch updates it automatically. Nothing goes live until someone publishes it from the admin.
+3. Pick the branch to connect (see *Branch mapping* below) and press **Connect**
+4. Shopify creates a new **unpublished** theme tied to that branch. Every push to that branch updates it automatically. Nothing goes live until someone publishes it from the admin.
 
 ## Branch mapping
 
