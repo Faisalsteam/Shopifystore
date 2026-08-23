@@ -81,7 +81,10 @@ Full detail in [`docs/architecture.md`](docs/architecture.md) and [`docs/integra
 ## Repository structure
 
 ```
-theme/              Shopify theme (Online Store 2.0) — scaffolded, awaiting brand kit
+layout/, templates/, sections/,
+snippets/, assets/, config/,
+locales/, vendor/    Shopify theme (Online Store 2.0) — at repo root,
+                     a Shopify GitHub-integration requirement, see THEME.md
 apps/                Custom (L3) apps/services — created as needed
 docs/                Roadmap, checklists, integration tracker, architecture
 docs/agents/         Charters for the 5 AI agent roles (Designer, Chatbot/Call Center,
@@ -104,16 +107,23 @@ docs/seo/            SEO Content Writer agent output — keyword strategy, conte
 | [`docs/integrations.md`](docs/integrations.md) | Every third-party integration: purpose, requirements, status |
 | [`docs/architecture.md`](docs/architecture.md) | Planned repo structure and tech stack in detail |
 | [`docs/agents/`](docs/agents/README.md) | Charters for the 5 AI agent roles and how they operate unattended |
+| [`THEME.md`](THEME.md) | The Shopify theme itself — base, status, directory structure |
+| [`docs/deployment.md`](docs/deployment.md) | How the theme reaches the actual store (GitHub → Shopify), setup steps, branch mapping |
+| [`docs/payment-gateway-comparison.md`](docs/payment-gateway-comparison.md) | MyFatoorah vs. Tap vs. PayTabs vs. Telr across all GCC markets |
+| [`docs/catalog-import.md`](docs/catalog-import.md) | How the raw supplier product list becomes a Matrixify-ready import |
+| [`content/legal/README.md`](content/legal/README.md) | Terms, Privacy, and Refund/Shipping policy drafts — status and what needs legal review |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | Branching, workflow, and commit conventions |
 | [`CHANGELOG.md`](CHANGELOG.md) | Notable changes to this repository, by date |
 
 ## Current status
 
-**Phase 0 — Setup & Foundation.** Repository scaffolding is in place. Blocked on:
+**Phase 0 — Setup & Foundation.**
 
-1. **Brand kit** (name, logo, color palette) from Amal — blocks the theme build
-2. **Shopify store access** (Admin API token or theme access) — needed before real theme code can be pushed
-3. **WhatsApp Business API** and **payment gateway merchant KYC** approvals — long lead times, should be started in parallel regardless of the above
+- **Launch scope confirmed:** all GCC markets (not a single-country launch)
+- **Theme in place:** Shopify's Dawn v16.0.0, vendored in full at the repo root, with RTL wired at the document level (`dir="rtl"`/`dir="ltr"` follows the active storefront language automatically) — see [`THEME.md`](THEME.md). It's unbranded — no logo/colors/fonts yet.
+- **Store connected.** `9gucqc-qy.myshopify.com` is linked to this repo via Shopify's native GitHub integration (deployment doesn't go through the Shopify API — Claude's session can't reach it — the store pulls from this repo instead; see [`docs/deployment.md`](docs/deployment.md)). Preview confirmed working.
+- **Now the only real blocker:** brand kit (name, logo, color palette) from Amal — theme, RTL wiring, and store connection are all in place and waiting on it.
+- **Long lead time, start now regardless:** WhatsApp Business API approval and payment gateway merchant KYC — now evaluated against all-GCC coverage, not one country.
 
 See [`docs/setup-checklist.md`](docs/setup-checklist.md) for the complete, owner-tagged list.
 

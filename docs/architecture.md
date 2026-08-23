@@ -13,40 +13,40 @@
 ## Repo layout
 
 ```
-theme/                  Shopify theme (Online Store 2.0 structure)
-  layout/
-  templates/
-  sections/
-  snippets/
-  assets/
-  config/
-  locales/
-apps/                    Custom L3 apps/services (created as needed — e.g. WhatsApp
-                         webhook relay, future delivery-tracking app). Each gets its
-                         own README per docs/roadmap.md Phase 7-8.
-docs/                    Roadmap, checklists, integration tracker, this file
-docs/agents/             AI agent role charters (Designer, Chatbot/Call Center,
-                         Dispatcher, Marketing, SEO Content Writer) — see agents/README.md
-docs/design/             Designer agent output (briefs, wireframes)
-docs/support/            Chatbot/Call Center agent output (flows, FAQ, escalation)
-docs/dispatch/           Dispatcher agent output (fulfillment SOP, courier matrix)
-docs/marketing/          Marketing agent output (content calendar, Klaviyo flow specs)
-docs/seo/                SEO Content Writer agent output (keyword strategy, templates)
-.github/                 PR/issue templates, CI workflows
-.env.example             Every env var a custom app needs, no real values
+layout/                  Shopify theme — theme.liquid, checkout customizations
+templates/                JSON templates per page type
+sections/                 Reusable page sections
+snippets/                 Reusable Liquid partials
+assets/                   CSS, JS, images, fonts
+config/                   settings_schema.json, settings_data.json
+locales/                  Translation files
+vendor/                   Upstream Dawn license/release notes, for attribution
+apps/                     Custom L3 apps/services (created as needed — e.g. WhatsApp
+                          webhook relay, future delivery-tracking app). Each gets its
+                          own README per docs/roadmap.md Phase 7-8.
+docs/                     Roadmap, checklists, integration tracker, this file
+docs/agents/              AI agent role charters (Designer, Chatbot/Call Center,
+                          Dispatcher, Marketing, SEO Content Writer) — see agents/README.md
+docs/design/              Designer agent output (briefs, wireframes)
+docs/support/             Chatbot/Call Center agent output (flows, FAQ, escalation)
+docs/dispatch/            Dispatcher agent output (fulfillment SOP, courier matrix)
+docs/marketing/           Marketing agent output (content calendar, Klaviyo flow specs)
+docs/seo/                 SEO Content Writer agent output (keyword strategy, templates)
+.github/                  PR/issue templates, CI workflows
+.env.example              Every env var a custom app needs, no real values
 ```
+
+The theme sits at the **repo root**, not in a subfolder — that's a hard requirement of Shopify's GitHub integration (its "Connect from GitHub" flow has no subfolder option, see `docs/deployment.md`). Everything else at the root (`docs/`, `README.md`, `.github/`, etc.) is project tooling that Shopify's theme connector simply ignores, since it only recognizes the specific theme folder names above.
 
 `apps/` doesn't exist yet — it's created the first time an L3 custom piece is built (see `docs/roadmap.md` for what's L3: WhatsApp checkout flow beyond simple Flow rules, custom delivery/tracking app, voice/photo search — all deferred or scoped as needed).
 
 ## Theme scaffold status
 
-`theme/` currently holds the standard Online Store 2.0 directory structure with no theme installed yet. It's waiting on:
-1. Brand kit (name, logo, colors) from Amal
-2. An RTL-ready base theme selection
-3. Shopify store access (to pull/push via Shopify CLI)
-
-Once those land, the actual theme (either a purchased/RTL-ready theme or a fork of a base like Dawn) gets committed here and developed via `shopify theme dev` against a staging store, per the workflow in `CONTRIBUTING.md`.
+The theme is Shopify's [Dawn](https://github.com/Shopify/dawn) `v16.0.0`, vendored in full, with `dir="rtl"`/`dir="ltr"` wired at the document level based on the active storefront language. It's unbranded — running Dawn's stock look with no logo/colors/fonts applied — and is connected to the live store (`9gucqc-qy.myshopify.com`) via Shopify's GitHub integration, confirmed working. See `THEME.md` for exact status and local dev commands. Still open:
+1. Brand kit (name, logo, colors) from Amal — needed to theme it
+2. Arabic locale content (`locales/ar.json`) — written Arabic-first, not machine-translated
+3. Section-by-section RTL visual audit as each custom piece is built
 
 ## CI
 
-`.github/workflows/theme-check.yml` runs [Shopify Theme Check](https://shopify.dev/docs/storefronts/themes/tools/theme-check) against `theme/` on every PR once real theme files exist. It's a no-op until then.
+`.github/workflows/theme-check.yml` runs [Shopify Theme Check](https://shopify.dev/docs/storefronts/themes/tools/theme-check) against the theme folders on every PR that touches them.

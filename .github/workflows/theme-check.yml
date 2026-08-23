@@ -3,7 +3,14 @@ name: Theme Check
 on:
   pull_request:
     paths:
-      - "theme/**"
+      - "layout/**"
+      - "templates/**"
+      - "sections/**"
+      - "snippets/**"
+      - "assets/**"
+      - "config/**"
+      - "locales/**"
+      - ".theme-check.yml"
 
 jobs:
   theme-check:
@@ -11,6 +18,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Run Shopify Theme Check
-        uses: shopify/theme-check-action@v3
-        with:
-          root: theme
+        uses: shopify/theme-check-action@v2.2.0

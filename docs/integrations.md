@@ -4,10 +4,10 @@ Every third-party system this build touches: what it's for, what it needs from u
 
 | Integration | Purpose | Level | What it needs from us | Status |
 |---|---|---|---|---|
-| **Shopify** | Storefront, catalog, checkout | L1 | Store URL + Admin API token or theme access | Not connected |
-| **Theme** (RTL-ready, e.g. an Online Store 2.0 theme) | Storefront presentation | L1/L2 | Brand kit (name, logo, colors) | Blocked on brand kit |
-| **Matrixify** | Bulk product upload, variants, metafields | L2 | Shopify app install; master catalog in Google Sheets (Amal's) | Not started |
-| **Payment gateway** — MyFatoorah / Tap Payments / PayTabs / Telr (pick one based on launch country) | Checkout payment, local rails (KNET, mada, etc.) | L2 | Country decision, merchant KYC approval (slow — start early), API credentials post-approval | Not started |
+| **Shopify** | Storefront, catalog, checkout | L1 | Store domain (`9gucqc-qy.myshopify.com`); deployed via GitHub integration, not an API token (see `docs/deployment.md`) | Connected, preview confirmed working |
+| **Theme** — Shopify Dawn v16.0.0 (vendored at repo root, see `THEME.md`) | Storefront presentation | L1/L2 | Brand kit (name, logo, colors) to theme it; Arabic locale content | Connected to the live store, confirmed working — unbranded, blocked on brand kit |
+| **Matrixify** | Bulk product upload, variants, metafields | L2 | Shopify app install; master catalog in Google Sheets (Amal's) | Draft catalog ready (2,855 products parsed) — see `docs/catalog-import.md`; needs prices, inventory, photos before real import |
+| **Payment gateway** — MyFatoorah / Tap Payments / PayTabs / Telr | Checkout payment, local rails (KNET, mada, etc.) | L2 | Coverage comparison ready (`docs/payment-gateway-comparison.md`) — final pick + direct rate quotes still needed; merchant KYC approval per country is the slow part, start early | Comparison ready, decision + quotes pending |
 | **WhatsApp Business API** (via Meta) + BSP (**Zoko** or **WATI**) | Automated templated messages, checkout links in-chat | L2/L3 | Meta Business Manager, WhatsApp Business API approval (slow — start early), BSP account | Not started |
 | **Klaviyo** | Email CRM: capture, segment, trigger/send, report | L1/L2 | Account + API key | Not started |
 | **Shopify Flow** | Wiring simple triggers (e.g. Klaviyo → WhatsApp) | L1 | Native to Shopify, no separate account | N/A until store exists |
@@ -29,6 +29,6 @@ Every third-party system this build touches: what it's for, what it needs from u
 
 ## Decisions still open (blocks locking these in)
 
-1. Launch country(ies) → payment gateway + courier
+1. **Launch scope confirmed as all GCC markets** — still need: which gateway(s)/courier(s) actually cover all six countries at acceptable cost, vs. a per-country split
 2. Klaviyo + Zoko/WATI budget tolerance (both usage-based)
-3. Brand name/colors → theme selection
+3. Brand name/colors → theme branding (base theme itself is no longer blocking — see the Theme row above)
