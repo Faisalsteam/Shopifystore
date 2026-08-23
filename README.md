@@ -40,7 +40,7 @@ Five AI-managed roles do ongoing work in their lane — even when nobody's activ
 | Chatbot / Call Center | WhatsApp + FAQ support flows | WhatsApp Business API + BSP account |
 | Dispatcher | Fulfillment, courier selection, delivery exceptions | Launch country, courier account |
 | Marketing Agency | Campaigns, Klaviyo flows, social, competitive alerts | Klaviyo, WhatsApp BSP, social/Prisync accounts |
-| SEO Content Writer (AR/EN) | Product/blog copy, meta tags, keyword strategy | Master product catalog |
+| SEO Content Writer (AR/EN) | Product/blog copy, meta tags, keyword strategy | ~~Master product catalog~~ cleared — first real batch landed |
 
 ## How a build task flows
 

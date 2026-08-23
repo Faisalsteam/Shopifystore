@@ -22,10 +22,14 @@ Write and structure every piece of on-site and blog content — Arabic-first, En
 
 | File | Purpose |
 |---|---|
-| [`docs/seo/keyword-strategy.md`](../seo/keyword-strategy.md) | Keyword research framework by category |
-| [`docs/seo/content-templates.md`](../seo/content-templates.md) | Meta tag + product description templates, AR/EN |
+| [`docs/seo/README.md`](../seo/README.md) | Batch index — what's real vs. still placeholder, open items |
+| [`docs/seo/keyword-strategy.md`](../seo/keyword-strategy.md) | Keyword research, now built on the real catalog's concentration split and top-brand frequency |
+| [`docs/seo/content-templates.md`](../seo/content-templates.md) | Meta tag + product description templates, with 3 real worked examples on actual SKUs |
+| [`docs/seo/category-pages.md`](../seo/category-pages.md) | The real, buildable collection-page list (concentration/gender/brand) with AR/EN meta tags per page |
 | [`docs/seo/sample-blog-en.md`](../seo/sample-blog-en.md) | Sample English blog post |
 | [`docs/seo/sample-blog-ar.md`](../seo/sample-blog-ar.md) | Sample Arabic blog post |
+
+**First real batch landed:** grounded in the actual 2,855-item catalog (concentration split, top-20-brand frequency, 3 fully worked product descriptions on real SKUs). One real finding worth Amal's attention: **~59% of the catalog (~1,678 items) has no gender label in the source data** — flagged, not guessed at; see `docs/seo/keyword-strategy.md`. Still placeholder: brand voice (blocked on the Designer brief) and anything needing scent-note data (not in the supplier parse, never fabricated).
 
 ## Blocked on → unlocks at
 
