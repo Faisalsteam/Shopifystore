@@ -31,10 +31,10 @@ Write and structure every piece of on-site and blog content — Arabic-first, En
 
 | Blocked on | Unlocks |
 |---|---|
-| Master product catalog (Google Sheet, Amal — `docs/roadmap.md` Phase 2) | Keyword strategy and product descriptions move from template to real, per-SKU content |
+| ~~Master product catalog~~ | **Cleared** — 2,855-item supplier list parsed into a Matrixify-ready draft (brand/size/concentration parsed, Arabic title draft) — see `docs/catalog-import.md`. Real per-brand-line SEO content can now be drafted from it. |
 | Brand kit / voice (via the Designer agent's brief) | Content moves from placeholder tone to on-brand voice |
 | Shopify store access | Content can be pasted into real product/blog pages instead of staged here |
 
 ## Cadence
 
-Weekly pass to expand keyword coverage and refresh templates. Once the master catalog lands, next run drafts real product-line SEO content in batches for Amal's review, matching the Matrixify import batches described in `docs/roadmap.md`.
+Weekly pass to expand keyword coverage and refresh templates. The master catalog has landed — next run drafts real product-line SEO content in batches for Amal's review, matching the Matrixify import batches described in `docs/roadmap.md`, using the brand/size/concentration data already parsed in the catalog draft rather than starting from scratch.

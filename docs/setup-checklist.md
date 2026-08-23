@@ -59,8 +59,8 @@ None of these should ever be committed to this repo — see `.env.example` and `
 
 Five AI agents (`docs/agents/`) are producing drafts, specs, and templates that don't require any of the above — see each charter for exactly what's ready and what it unlocks once its blockers above clear:
 
-- Designer → `docs/design/` (needs: brand kit)
+- Designer → `docs/design/` (theme + store connection cleared — only final color/logo values still need brand kit)
 - Chatbot / Call Center → `docs/support/` (needs: WhatsApp Business API + BSP)
 - Dispatcher → `docs/dispatch/` (needs: launch country, courier account)
 - Marketing Agency → `docs/marketing/` (needs: Klaviyo, WhatsApp BSP, social/Prisync accounts)
-- SEO Content Writer (AR/EN) → `docs/seo/` (needs: master product catalog)
+- SEO Content Writer (AR/EN) → `docs/seo/` (master catalog cleared — now drafting real per-brand-line content)

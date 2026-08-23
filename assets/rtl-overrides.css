@@ -1,0 +1,103 @@
+/**
+ * RTL overrides for Dawn.
+ *
+ * Dawn's base CSS uses physical properties (left/right, translateX,
+ * float, text-align: left) in a lot of places — those don't auto-flip
+ * just because <html dir="rtl"> is set (only logical properties and a
+ * handful of browser defaults do). This file corrects the specific,
+ * confirmed-broken cases: components that are visibly anchored to one
+ * physical side regardless of reading direction, which reads as "backwards"
+ * for Arabic users.
+ *
+ * Scope: this covers the two components most likely to break in a way
+ * that's actually jarring to a user (the cart drawer and the mobile menu
+ * drawer both slide in from a hardcoded screen edge), plus a couple of
+ * small, low-risk text-alignment fixes found in the same audit pass.
+ *
+ * NOT covered here (deliberately, not an oversight): Dawn has ~50 CSS
+ * files with some left/right usage — most of it is non-directional
+ * (corner radii, grid gaps, one-off spacing that reads fine either way).
+ * A full pixel-by-pixel RTL pass needs real content and a live preview
+ * to do safely without guessing — see THEME.md for what's still open.
+ * Every rule below was picked because the underlying bug is structurally
+ * obvious from the CSS alone (a panel with only a left OR right position/
+ * transform, not both), not because it "looked directional."
+ */
+
+/* Cart drawer: opens from the trailing edge, not always the right.
+   Dawn hardcodes it to the right (`justify-content: flex-end`,
+   `translateX(100%)`, `border-right: 0`) — mirror it for RTL. */
+[dir="rtl"] .drawer {
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .drawer__inner {
+  border-right: 0.1rem solid rgba(var(--color-foreground), 0.2);
+  border-left: 0;
+  transform: translateX(-100%);
+}
+
+/* .drawer.active .drawer__inner's open state (translateX(0), defined
+   upstream) is direction-agnostic and needs no override here. */
+
+[dir="rtl"] .drawer__close {
+  right: auto;
+  left: -10px;
+}
+
+[dir="rtl"] .cart-drawer__warnings .drawer__close {
+  right: auto;
+  left: 5px;
+}
+
+[dir="rtl"] .cart-drawer .tax-note {
+  text-align: right;
+}
+
+[dir="rtl"] .cart-drawer .cart-item__nested-line .cart-item__image {
+  float: left;
+}
+
+/* Mobile menu drawer: same issue — hardcoded to open from the left
+   (`left: 0`, `translateX(-100%)`), independent of where the menu
+   toggle actually ends up once the header itself mirrors in RTL.
+   Only the CLOSED-state offset needs mirroring here — the open state
+   (`details[open].menu-opening > .menu-drawer { transform: translateX(0) }`,
+   defined upstream in component-menu-drawer.css) is direction-agnostic,
+   0 is 0 either way, so it's left alone. */
+[dir="rtl"] .menu-drawer {
+  left: auto;
+  right: 0;
+  transform: translateX(100%);
+}
+
+[dir="rtl"] .js .menu-drawer__submenu {
+  left: auto;
+  right: 0;
+  transform: translateX(-100%);
+}
+
+[dir="rtl"] .menu-drawer__menu-item > .svg-wrapper {
+  right: auto;
+  left: 3rem;
+}
+
+[dir="rtl"] .menu-drawer summary.menu-drawer__menu-item {
+  padding-right: 3rem;
+  padding-left: 5.2rem;
+}
+
+[dir="rtl"] .menu-drawer__close-button {
+  text-align: right;
+  padding: 1.2rem 3rem 1.2rem 2.6rem;
+}
+
+[dir="rtl"] .menu-drawer__close-button .svg-wrapper {
+  margin-right: 0;
+  margin-left: 1rem;
+}
+
+[dir="rtl"] .menu-drawer .list-social {
+  margin-left: 0;
+  margin-right: -1.25rem;
+}
