@@ -51,3 +51,13 @@ All bilingual (AR/EN), written Arabic-first.
 - [ ] Master product catalog (Google Sheet, per the Phase 2 section of `docs/roadmap.md`)
 
 None of these should ever be committed to this repo — see `.env.example` and `docs/integrations.md` for how secrets are handled.
+
+## Agent-ready work (not blocked — happening now)
+
+Five AI agents (`docs/agents/`) are producing drafts, specs, and templates that don't require any of the above — see each charter for exactly what's ready and what it unlocks once its blockers above clear:
+
+- Designer → `docs/design/` (needs: brand kit)
+- Chatbot / Call Center → `docs/support/` (needs: WhatsApp Business API + BSP)
+- Dispatcher → `docs/dispatch/` (needs: launch country, courier account)
+- Marketing Agency → `docs/marketing/` (needs: Klaviyo, WhatsApp BSP, social/Prisync accounts)
+- SEO Content Writer (AR/EN) → `docs/seo/` (needs: master product catalog)

@@ -25,6 +25,13 @@ apps/                    Custom L3 apps/services (created as needed — e.g. Wha
                          webhook relay, future delivery-tracking app). Each gets its
                          own README per docs/roadmap.md Phase 7-8.
 docs/                    Roadmap, checklists, integration tracker, this file
+docs/agents/             AI agent role charters (Designer, Chatbot/Call Center,
+                         Dispatcher, Marketing, SEO Content Writer) — see agents/README.md
+docs/design/             Designer agent output (briefs, wireframes)
+docs/support/            Chatbot/Call Center agent output (flows, FAQ, escalation)
+docs/dispatch/           Dispatcher agent output (fulfillment SOP, courier matrix)
+docs/marketing/          Marketing agent output (content calendar, Klaviyo flow specs)
+docs/seo/                SEO Content Writer agent output (keyword strategy, templates)
 .github/                 PR/issue templates, CI workflows
 .env.example             Every env var a custom app needs, no real values
 ```

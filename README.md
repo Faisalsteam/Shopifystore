@@ -30,6 +30,18 @@ The store targets one or more GCC markets with a native Shopify storefront, a re
 | **Claude** | Developer | Builds/edits the theme, custom apps, and automations; pushes to GitHub; documents everything so it isn't locked to one person | Business or budget decisions |
 | **Faisal** | Financial owner | Budget, supplier payments, margins, P&L, ROI tracking, payment settlement reconciliation | Code or moderation |
 
+### AI agents
+
+Five AI-managed roles do ongoing work in their lane — even when nobody's actively driving Claude — and hand drafts to Amal for approval before anything goes live, per the operations model in `docs/roadmap.md`. Full charters: [`docs/agents/`](docs/agents/README.md).
+
+| Agent | Owns | Blocked on (Phase 0) |
+|---|---|---|
+| Designer | Layout, UX, design system, section specs | Brand kit, RTL theme selection |
+| Chatbot / Call Center | WhatsApp + FAQ support flows | WhatsApp Business API + BSP account |
+| Dispatcher | Fulfillment, courier selection, delivery exceptions | Launch country, courier account |
+| Marketing Agency | Campaigns, Klaviyo flows, social, competitive alerts | Klaviyo, WhatsApp BSP, social/Prisync accounts |
+| SEO Content Writer (AR/EN) | Product/blog copy, meta tags, keyword strategy | Master product catalog |
+
 ## How a build task flows
 
 ```mermaid
@@ -72,6 +84,13 @@ Full detail in [`docs/architecture.md`](docs/architecture.md) and [`docs/integra
 theme/              Shopify theme (Online Store 2.0) — scaffolded, awaiting brand kit
 apps/                Custom (L3) apps/services — created as needed
 docs/                Roadmap, checklists, integration tracker, architecture
+docs/agents/         Charters for the 5 AI agent roles (Designer, Chatbot/Call Center,
+                     Dispatcher, Marketing, SEO Content Writer)
+docs/design/         Designer agent output — briefs, wireframes
+docs/support/        Chatbot/Call Center agent output — flows, FAQ, escalation rules
+docs/dispatch/       Dispatcher agent output — fulfillment SOP, courier matrix
+docs/marketing/      Marketing agent output — content calendar, Klaviyo flow specs
+docs/seo/            SEO Content Writer agent output — keyword strategy, content templates
 .github/             PR/issue templates, CI workflows
 .env.example         Every env var a custom app needs — no real values
 ```
@@ -84,6 +103,7 @@ docs/                Roadmap, checklists, integration tracker, architecture
 | [`docs/setup-checklist.md`](docs/setup-checklist.md) | Live blocker checklist — accounts, approvals, and decisions needed, by owner |
 | [`docs/integrations.md`](docs/integrations.md) | Every third-party integration: purpose, requirements, status |
 | [`docs/architecture.md`](docs/architecture.md) | Planned repo structure and tech stack in detail |
+| [`docs/agents/`](docs/agents/README.md) | Charters for the 5 AI agent roles and how they operate unattended |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | Branching, workflow, and commit conventions |
 | [`CHANGELOG.md`](CHANGELOG.md) | Notable changes to this repository, by date |
 
