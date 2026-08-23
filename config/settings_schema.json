@@ -1466,5 +1466,24 @@
         "label": "t:settings_schema.customer_accounts.settings.customer_account_menu.label"
       }
     ]
+  },
+  {
+    "name": "Integrations",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Klaviyo"
+      },
+      {
+        "type": "paragraph",
+        "content": "Enter your Klaviyo Public API Key (Company ID) to turn on Klaviyo's onsite tracking and forms — install the Klaviyo app from the Shopify App Store separately for order/customer data sync (no code needed for that part). See docs/roadmap.md Phase 4 and docs/marketing/klaviyo-flows.md."
+      },
+      {
+        "type": "text",
+        "id": "klaviyo_public_api_key",
+        "label": "Klaviyo Public API Key",
+        "info": "Found in Klaviyo under Settings > API Keys. Leave blank to keep Klaviyo off."
+      }
+    ]
   }
 ]

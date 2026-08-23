@@ -13,6 +13,7 @@ This is an unbranded starting point, not the finished storefront. What's done vs
 - `layout/theme.liquid` sets `dir="rtl"`/`dir="ltr"` on `<html>` automatically based on the active storefront language (`request.locale.iso_code`), so the layout flips the moment Arabic is added as a shop language — no theme-setting toggle needed
 - Connected to the live store (`9gucqc-qy.myshopify.com`) via Shopify's GitHub integration — see `docs/deployment.md`
 - WhatsApp click-to-chat floating button (`sections/whatsapp-button.liquid`) — a plain `wa.me` link, no WhatsApp Business API/BSP account needed; number, message, colors, and on/off all editable from the theme customizer under Theme settings. The Business API + automated flows (Zoko/WATI) are a separate, later Phase 4 build — this just gets a real "message us" entry point live now.
+- Klaviyo onsite tracking hook — a "Klaviyo Public API Key" setting under Theme settings → Integrations; once filled in, Klaviyo's tracking script and dashboard-built forms/popups work with no further code changes. Order/customer sync is separate (the Klaviyo Shopify app, no code either) — see `docs/marketing/klaviyo-flows.md`.
 
 **Still open — see `docs/roadmap.md` (Phase 2) and `docs/setup-checklist.md`**
 - Brand kit not applied yet: no logo, no color palette, no fonts — currently running Dawn's stock look

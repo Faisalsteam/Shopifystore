@@ -46,3 +46,5 @@ Specs for the lifecycle flows named in `docs/roadmap.md` Phase 4. These are read
 ---
 
 **Status:** all five flows are specs only — no Klaviyo account exists yet (`docs/setup-checklist.md`). Building them for real is a Klaviyo-editor task once the account and API key land; this file is what gets translated into that editor.
+
+**One piece is already wired in the theme:** a "Klaviyo Public API Key" setting exists under Theme settings → Integrations. As soon as Amal/Faisal pastes in the real key, Klaviyo's onsite tracking script and any forms/popups built in the Klaviyo dashboard start working — no further code changes. This only covers onsite tracking/forms; syncing orders and customers into Klaviyo is a separate step (installing the Klaviyo app from the Shopify App Store), also no code required.

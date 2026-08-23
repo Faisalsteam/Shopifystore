@@ -48,6 +48,7 @@ All bilingual (AR/EN), written Arabic-first.
 - [x] ~~Connect the store to this GitHub repo~~ — done. `9gucqc-qy.myshopify.com` is connected to this repo on this branch via Shopify's GitHub integration; preview confirmed working (2026-08-22). The theme had to be moved to the repo root for the connection to find it — Shopify's connector has no subfolder option (see `docs/deployment.md`). Future pushes to the connected branch update it automatically.
 - [ ] **Next up:** brand kit (name, logo, colors) from Amal — this is the next real blocker; everything else (theme, RTL wiring, store connection, WhatsApp button) is in place and waiting on it
 - [ ] Once the store connection syncs this branch: Amal, turn on the WhatsApp button in the theme customizer (Theme settings → WhatsApp button) and enter the real support number — it works today with no other setup
+- [ ] Once a Klaviyo account exists: paste the Public API Key into Theme settings → Integrations → Klaviyo — onsite tracking/forms turn on immediately, no code changes needed
 - [ ] Klaviyo API key
 - [ ] Payment gateway API credentials (after merchant approval)
 - [ ] WhatsApp BSP (Zoko/WATI) API credentials

@@ -329,6 +329,20 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+
+    {%- if settings.klaviyo_public_api_key != blank -%}
+      {%- comment -%}
+        Klaviyo onsite tracking + forms. This is the only piece that lives in
+        theme code — order/customer data sync is a separate concern, handled
+        by installing the Klaviyo app from the Shopify App Store (no code
+        needed for that half). See docs/marketing/klaviyo-flows.md.
+      {%- endcomment -%}
+      <script
+        async
+        type="text/javascript"
+        src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id={{ settings.klaviyo_public_api_key }}"
+      ></script>
+    {%- endif -%}
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
