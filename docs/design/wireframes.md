@@ -34,7 +34,7 @@ Layout specs for the core templates, written without real brand values so they c
 
 ## Cart drawer
 
-1. **Slide-in from the right in LTR, from the left in RTL** — the one interaction that must genuinely mirror, not just visually flip.
+1. ~~**Slide-in from the right in LTR, from the left in RTL**~~ — **built**, `assets/rtl-overrides.css` (merged in PR #4). This was the one interaction that had to genuinely mirror, not just visually flip, and it was a real bug in Dawn's stock CSS (hardcoded to the right regardless of `dir`), not a hypothetical.
 2. Line items: image, title, variant, qty stepper, price, remove.
 3. Free-shipping progress bar if a threshold is set.
 4. Order note field (optional) — useful for gift orders.
