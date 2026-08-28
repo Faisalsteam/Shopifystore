@@ -20,8 +20,10 @@ Placeholders in `{{curly braces}}` are variables the BSP or a webhook fills in a
 
 ## 3. Returns / exchange
 
-- AR: يمكنك استرجاع أو استبدال المنتج خلال {{return_window}} يومًا من الاستلام، بشرط أن يكون غير مستخدم وبتغليفه الأصلي. لبدء الإجراء أرسل رقم الطلب وسبب الإرجاع.
-- EN: You can return or exchange within {{return_window}} days of delivery, unused and in original packaging. To start, send your order number and the reason for return.
+- AR: يمكنك استرجاع أو استبدال المنتج خلال 14 يومًا من الاستلام، بشرط أن يكون غير مستخدم وبتغليفه الأصلي. لبدء الإجراء أرسل رقم الطلب وسبب الإرجاع.
+- EN: You can return or exchange within 14 days of delivery, unused and in original packaging. To start, send your order number and the reason for return.
+
+(14 days per `content/legal/{ar,en}/refund-shipping-policy.md` — grounded in Kuwait Law No. 39/2014, still pending a lawyer's final sign-off, same caveat as `docs/support/faq.md`.)
 
 **Hand off to human** once a return is confirmed — payment/refund actions aren't bot-automated at launch.
 

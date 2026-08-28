@@ -35,10 +35,10 @@ A (EN): We currently ship to {{launch_countries}}. Coverage will expand over tim
 ## Returns & exchanges
 
 **Q (AR): وش سياسة الإرجاع؟**
-A (AR): يمكن إرجاع أو استبدال المنتج خلال {{return_window}} يومًا من الاستلام، بشرط أن يكون غير مستخدم وبتغليفه الأصلي.
+A (AR): يمكن إرجاع أو استبدال المنتج خلال 14 يومًا من الاستلام، بشرط أن يكون غير مستخدم وبتغليفه الأصلي — للتفاصيل الكاملة انظر [سياسة الشحن والاسترجاع](../../content/legal/ar/refund-shipping-policy.md).
 
 **Q (EN): What's your return policy?**
-A (EN): Returns/exchanges accepted within {{return_window}} days of delivery, unused and in original packaging.
+A (EN): Returns/exchanges accepted within 14 days of delivery, unused and in original packaging — full details in the [Shipping & Refund Policy](../../content/legal/en/refund-shipping-policy.md).
 
 ## Product
 
@@ -58,4 +58,4 @@ A (EN): Reach us on WhatsApp at {{whatsapp_number}} or by email at {{support_ema
 
 ---
 
-Items in `{{double braces}}` are placeholders pending decisions still open in `docs/setup-checklist.md` and `docs/integrations.md` (payment gateway, courier/country, WhatsApp number). Terms & Conditions, Privacy Policy, and Refund/Shipping Policy are separate required legal documents (also listed in `docs/setup-checklist.md`) — not covered by this FAQ.
+Items in `{{double braces}}` are placeholders pending decisions still open in `docs/setup-checklist.md` and `docs/integrations.md` (payment gateway, courier/country breakdown, WhatsApp number). The 14-day return window above is filled in from `content/legal/{ar,en}/refund-shipping-policy.md` — that draft is grounded in Kuwait Law No. 39/2014 but still needs a licensed lawyer's sign-off before publishing (see `content/legal/README.md`), so treat "14" as highly likely but not 100% final until that review lands. Terms & Conditions and Privacy Policy are separate required legal documents (also listed in `docs/setup-checklist.md`) — not covered by this FAQ.

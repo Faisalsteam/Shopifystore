@@ -46,7 +46,9 @@ All bilingual (AR/EN), written Arabic-first.
 
 - [x] ~~Shopify store domain + Theme Access password~~ — received (`9gucqc-qy.myshopify.com`). Not usable from this development session (network policy blocks direct Shopify API access — see `docs/deployment.md`); deployment instead goes through Shopify's GitHub integration.
 - [x] ~~Connect the store to this GitHub repo~~ — done. `9gucqc-qy.myshopify.com` is connected to this repo on this branch via Shopify's GitHub integration; preview confirmed working (2026-08-22). The theme had to be moved to the repo root for the connection to find it — Shopify's connector has no subfolder option (see `docs/deployment.md`). Future pushes to the connected branch update it automatically.
-- [ ] **Next up:** brand kit (name, logo, colors) from Amal — this is the next real blocker; everything else (theme, RTL wiring, store connection) is in place and waiting on it
+- [ ] **Next up:** brand kit (name, logo, colors) from Amal — this is the next real blocker; everything else (theme, RTL wiring, store connection, WhatsApp button) is in place and waiting on it
+- [ ] Once the store connection syncs this branch: Amal, turn on the WhatsApp button in the theme customizer (Theme settings → WhatsApp button) and enter the real support number — it works today with no other setup
+- [ ] Once a Klaviyo account exists: paste the Public API Key into Theme settings → Integrations → Klaviyo — onsite tracking/forms turn on immediately, no code changes needed
 - [ ] Klaviyo API key
 - [ ] Payment gateway API credentials (after merchant approval)
 - [ ] WhatsApp BSP (Zoko/WATI) API credentials
@@ -59,8 +61,8 @@ None of these should ever be committed to this repo — see `.env.example` and `
 
 Five AI agents (`docs/agents/`) are producing drafts, specs, and templates that don't require any of the above — see each charter for exactly what's ready and what it unlocks once its blockers above clear:
 
-- Designer → `docs/design/` (needs: brand kit)
+- Designer → `docs/design/` (theme + store connection cleared — only final color/logo values still need brand kit)
 - Chatbot / Call Center → `docs/support/` (needs: WhatsApp Business API + BSP)
 - Dispatcher → `docs/dispatch/` (needs: launch country, courier account)
 - Marketing Agency → `docs/marketing/` (needs: Klaviyo, WhatsApp BSP, social/Prisync accounts)
-- SEO Content Writer (AR/EN) → `docs/seo/` (needs: master product catalog)
+- SEO Content Writer (AR/EN) → `docs/seo/` (master catalog cleared — now drafting real per-brand-line content)
