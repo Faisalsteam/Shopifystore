@@ -4,6 +4,8 @@ Real structure, built from the actual 2,855-item supplier catalog (parsed per `d
 
 **Source note:** all counts and brand rankings below come from *catalog frequency* — how many rows in the supplier price list mention that concentration/brand — not from sales, search volume, or margin data. Treat this as "what the catalog can support a page about," not "what sells best." Real search-volume and sales-weighted keyword prioritization is future work once Shopify/GA access exists.
 
+**Correction (2026-08-28):** the first pass of this file undercounted gender labeling significantly — it only matched full words (`MEN`/`WOMEN`/`UNISEX`), missing the single-letter suffixes (`-M`, `-W`, `-U`) this catalog actually uses most (e.g. `...-100ML-W`). The real parser used to build the actual product data (`docs/catalog-import.md`) catches both, and the true numbers are much better than first reported — corrected throughout this file and `category-pages.md`.
+
 ## Structure per category
 
 For each product category/collection, capture:
@@ -28,18 +30,19 @@ For each product category/collection, capture:
 
 ## Category structure: build around concentration, not a generic "fragrance" catch-all
 
-The catalog is dominated by two concentrations — EDP and EDT together are 81% of all 2,855 items — so top-level category/keyword architecture should be built around concentration first, with brand and gender as secondary facets, not the other way around.
+The catalog is dominated by two concentrations — EDP and EDT together are ~79.5% of all 2,855 items — so top-level category/keyword architecture should be built around concentration first, with brand and gender as secondary facets, not the other way around.
 
 | Concentration | Count | Share | Keyword priority |
 |---|---|---|---|
-| Eau de Parfum (EDP) | 1,694 | 59% | **Primary** — biggest single category, should be the default/anchor collection |
-| Eau de Toilette (EDT) | 625 | 22% | **Primary** — second anchor collection |
-| Parfum / Extrait | 182 | 6% | Secondary — "extrait de parfum" / "او دو extrait" as a distinct, lower-volume but higher-intent (often higher price point) keyword set |
-| Eau de Cologne (EDC) | 25 | <1% | Minor — fold into EDT-adjacent content, not a standalone push |
-| Oil / Attar | 12 | <1% | Minor — niche/attar-specific searches ("عطر زيتي", "attar") worth a small dedicated set given how distinct the search intent is (alcohol-free, Gulf-specific demand), even though volume is tiny |
-| Gift sets | 6 | <1% | **Not worth a dedicated keyword push yet** — too small a slice of the catalog to justify its own category/keyword set this round. Revisit if the catalog's gift-set count grows. |
+| Eau de Parfum (EDP) | 1,666 | 58.4% | **Primary** — biggest single category, should be the default/anchor collection |
+| Eau de Toilette (EDT) | 603 | 21.1% | **Primary** — second anchor collection |
+| **Not parseable from the item name** | **372** | **13.0%** | **Flag for the catalog team** — no concentration keyword in the raw name at all (not the same as the gender gap below). Can't build a reliable EDP/EDT keyword set for this slice yet; needs either a supplier data field or a manual pass. |
+| Parfum / Extrait | 177 | 6.2% | Secondary — "extrait de parfum" / "او دو extrait" as a distinct, lower-volume but higher-intent (often higher price point) keyword set |
+| Eau de Cologne (EDC) | 24 | 0.8% | Minor — fold into EDT-adjacent content, not a standalone push |
+| Eau Fraiche (EDF) | 5 | 0.2% | Minor — small enough to fold into EDT-adjacent content too |
+| Oil / Attar | 8 | 0.3% | Minor — niche/attar-specific searches ("عطر زيتي", "attar") worth a small dedicated set given how distinct the search intent is (alcohol-free, Gulf-specific demand), even though volume is tiny |
 
-This replaces the old placeholder's generic "perfume category" framing: don't build one big undifferentiated "fragrance" keyword set — build EDP and EDT as the two primary pillars, with Parfum/Extrait and Oil/Attar as smaller supporting sets.
+This replaces the old placeholder's generic "perfume category" framing: don't build one big undifferentiated "fragrance" keyword set — build EDP and EDT as the two primary pillars, with Parfum/Extrait and Oil/Attar as smaller supporting sets. (The first pass of this table also listed a "Gift sets" row — that was never actually a category the parser produces; dropped, since it wasn't real data.)
 
 ## Brand-based keyword sets (top brands by catalog frequency)
 
@@ -47,28 +50,38 @@ This replaces the old placeholder's generic "perfume category" framing: don't bu
 
 | Brand | Catalog count | Brand | Catalog count |
 |---|---|---|---|
-| Chanel | 99 | Xerjoff | 28 |
-| Marco Valentino | 94 | Giorgio Armani | 26 |
-| Dynamique | 63 | Byredo | 26 |
-| Mancera | 53 | Gucci | 26 |
-| Tom Ford | 50 | Hermès | 26 |
-| YSL | 41 | Versace | 25 |
-| Ajmal | 35 | Guerlain | 24 |
-| Rasasi | 35 | Creed | 22 |
-| Bvlgari | 33 | Givenchy | 20 |
-| Guess | 33 | Amouage | 15 |
-| Dior | 30 | Lattafa | 13 |
-| | | Khadlaj | 8 |
+| Chanel | 99 | Bvlgari | 33 |
+| Marco Valentino | 93 | Guess | 33 |
+| Dynamique | 63 | Xerjoff | 32 |
+| Mancera | 53 | Dior | 30 |
+| Tom Ford | 50 | French Avenue | 29 |
+| YSL | 41 | Byredo | 26 |
+| Ajmal | 35 | Dolce & Gabbana | 26 |
+| Rasasi | 35 | Gucci | 26 |
+| Allman | 34 | Hermès | 26 |
+| | | Versace | 26 |
+| | | Memo | 25 |
 
-Each of these is a candidate for its own brand keyword set (branded primary keyword + top product-line long-tails) — see `category-pages.md` for the actual page list built from this ranking. Brands below Khadlaj-level frequency aren't worth a dedicated keyword set yet; fold them into concentration/gender category pages instead.
+(Corrected list — the first pass missed Allman, French Avenue, Dolce & Gabbana, and Memo entirely, and wrongly included Giorgio Armani, Guerlain, Creed, Givenchy, Amouage, Lattafa, and Khadlaj, none of which actually make the top 20 by catalog count. Just below the cutoff, tied at 24: Guerlain and Zeon.)
 
-## Open item: gender labeling gap (flag for Amal / catalog team, not guessed)
+Each of these is a candidate for its own brand keyword set (branded primary keyword + top product-line long-tails) — see `category-pages.md` for the actual page list built from this ranking. Brands below Memo-level frequency (25) aren't worth a dedicated keyword set yet; fold them into concentration/gender category pages instead.
 
-Gender parsed from the raw item name splits as: Unisex 500, Men 365, Women 312 — but **~1,678 items (59% of the catalog) have no gender indicator in the name at all.** This is the single biggest gap in the current keyword/category structure:
+## Gender labeling: corrected — coverage is good, not a major gap
 
-- Men's and Women's category pages can only be built reliably from the ~1,177 labeled items right now — building "best men's cologne" style keyword sets against the full catalog would overstate what's actually taggable today.
-- This is **not something to guess or infer from brand/product-line name** (e.g. assuming a Chanel line is "women's" because it's a common assumption) — that risks misgendering products and needs a real human/data-driven pass, not an SEO agent's best guess.
-- Flagging this explicitly for Amal/the catalog team: the ~1,678 unlabeled items need a manual categorization pass (or a second data source — brand-line gender data from the supplier) before gender-specific keyword sets can cover the full catalog. Until then, gender category pages are scoped to the labeled subset only (see `category-pages.md`).
+The first pass of this file reported gender labeling as the single biggest gap in the catalog (claimed ~59% unlabeled). That was a parsing bug, not a real finding — see the correction note at the top of this file. The actual split, using the same parser that builds the real product data:
+
+| Gender | Count | Share |
+|---|---|---|
+| Women | 973 | 34.1% |
+| Men | 782 | 27.4% |
+| Unisex | 732 | 25.6% |
+| **Not labeled in the name** | **367** | **12.9%** |
+| Kids | 1 | 0.0% |
+
+**87.1% of the catalog is gender-labeled** — plenty to build Men's/Women's/Unisex category and keyword sets against the full catalog with confidence, not just a labeled subset.
+
+- The remaining 367 items (12.9%) with no gender token in the name are a real, smaller gap — flag them for Amal/the catalog team as before: **not something to guess or infer from brand/product-line name** (e.g. assuming a Chanel line is "women's" because it's a common assumption). A manual pass or a supplier data field is the right fix, not an SEO agent's best guess.
+- Gender-specific category pages (see `category-pages.md`) can now be built against the labeled 87.1% directly, with the unlabeled 12.9% called out as "brand/concentration pages only, no gender facet yet" rather than excluded from gender pages entirely.
 
 ## Keyword categories to build out per product line
 

@@ -114,7 +114,7 @@ Three examples, mixing concentration and brand tier: two EDP, one EDT; one item 
 
 **Source row:** barcode `6293708002092` — `AJMAL WISAL EDP-50ML` (Ajmal: 35 items in catalog; this specific row carries no gender token, unlike Examples 1–2)
 
-Deliberately chosen to show the template applied to one of the ~1,678 catalog rows with no gender indicator (see `keyword-strategy.md`, "Open item: gender labeling gap"). The description states the gap plainly instead of guessing a gender to sound complete.
+Deliberately chosen to show the template applied to one of the 367 catalog rows (12.9% — a real but modest slice, not the ~59% first reported; see the correction note in `keyword-strategy.md`) with no gender indicator. The description states the gap plainly instead of guessing a gender to sound complete.
 
 **Meta title AR:** `وصال عجمل EDP ٥٠مل | عطور | {اسم المتجر}`
 **Meta title EN:** `Ajmal Wisal EDP 50ml | Perfume | {Store Name}`
@@ -169,4 +169,4 @@ Deliberately chosen to show the template applied to one of the ~1,678 catalog ro
 
 ---
 
-**Status:** templates unchanged (they held up fine); the three abstract example skeletons have been replaced with real worked examples grounded in actual catalog SKUs. Still placeholder: brand voice/tone (blocked on `docs/design/brief-template.md`), and scent-family/key-notes content everywhere, which needs real sourced data before it can be written at all — see `docs/catalog-import.md`'s no-fabrication principle. Next batch: apply this same worked-example pattern across a full brand/concentration batch once Amal signs off on this first pass, and revisit the gender-category bullet once the ~1,678 unlabeled items get a manual pass.
+**Status:** templates unchanged (they held up fine); the three abstract example skeletons have been replaced with real worked examples grounded in actual catalog SKUs. Still placeholder: brand voice/tone (blocked on `docs/design/brief-template.md`), and scent-family/key-notes content everywhere, which needs real sourced data before it can be written at all — see `docs/catalog-import.md`'s no-fabrication principle. Next batch: apply this same worked-example pattern across a full brand/concentration batch once Amal signs off on this first pass, and revisit the gender-category bullet once the 367 unlabeled items (12.9% — see corrected numbers in `keyword-strategy.md`) get a manual pass.

@@ -11,7 +11,7 @@ Every third-party system this build touches: what it's for, what it needs from u
 | **WhatsApp Business API** (via Meta) + BSP (**Zoko** or **WATI**) | Automated templated messages, checkout links in-chat | L2/L3 | Meta Business Manager, WhatsApp Business API approval (slow — start early), BSP account | Not started |
 | **Klaviyo** | Email CRM: capture, segment, trigger/send, report | L1/L2 | Account + API key | Not started |
 | **Shopify Flow** | Wiring simple triggers (e.g. Klaviyo → WhatsApp) | L1 | Native to Shopify, no separate account | N/A until store exists |
-| **Courier** — Aramex / iMile / local GCC courier | Labels, tracking, delivery status sync | L1/L2 | Courier account, API credentials | Not started |
+| **Delivery** — local drivers (confirmed, not a third-party courier) | Delivery within Kuwait + rest of GCC | L1 (native Shopify shipping rates, no app/API) | Nothing — configured directly in Shopify Admin → Settings → Shipping, see `docs/shipping-setup.md` | **Rates confirmed** (1.5 KWD Kuwait / 5.5 KWD GCC) — still needs entering in Admin |
 | **Zoho CRM** or **HubSpot** | Support/sub-admin CRM | L1 | Account | Not decided |
 | **Prisync** (or similar) | Competitive price/stock monitoring + alerts | L2 | Account; do not scrape outside sanctioned tools (ToS/legal risk) | Not started |
 | **Buffer / Later** | Social media scheduling, AI drafts + human approval to publish | L2 | Account, social handles secured | Not started |

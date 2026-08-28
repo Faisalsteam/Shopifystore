@@ -38,7 +38,7 @@ Five AI-managed roles do ongoing work in their lane — even when nobody's activ
 |---|---|---|
 | Designer | Layout, UX, design system, section specs | Brand kit, RTL theme selection |
 | Chatbot / Call Center | WhatsApp + FAQ support flows | WhatsApp Business API + BSP account |
-| Dispatcher | Fulfillment, courier selection, delivery exceptions | Launch country, courier account |
+| Dispatcher | Fulfillment, courier selection, delivery exceptions | ~~Launch country, courier account~~ cleared — local drivers confirmed, rates set |
 | Marketing Agency | Campaigns, Klaviyo flows, social, competitive alerts | Klaviyo, WhatsApp BSP, social/Prisync accounts |
 | SEO Content Writer (AR/EN) | Product/blog copy, meta tags, keyword strategy | ~~Master product catalog~~ cleared — first real batch landed |
 
@@ -73,7 +73,7 @@ flowchart LR
 | Payments | MyFatoorah (interim, see `docs/payments-setup.md`) — permanent choice still open, see `docs/payment-gateway-comparison.md` | Hosted checkout, keeps card data out of PCI scope |
 | CRM / email | Klaviyo | Native Shopify integration |
 | Messaging | WhatsApp Business API + Zoko/WATI | Automated templated messages, checkout links in-chat |
-| Delivery | Third-party courier (Aramex / iMile / local) at launch | In-house delivery app is a later, separate build |
+| Delivery | Local drivers (confirmed) — 1.5 KWD Kuwait / 5.5 KWD rest of GCC | In-house delivery app is a later, separate build; see `docs/shipping-setup.md` |
 | Reporting | Shopify analytics + Looker Studio | No custom BI dashboard pre-launch |
 
 Full detail in [`docs/architecture.md`](docs/architecture.md) and [`docs/integrations.md`](docs/integrations.md).
@@ -113,6 +113,7 @@ docs/seo/            SEO Content Writer agent output — keyword strategy, conte
 | [`docs/testing-checkout.md`](docs/testing-checkout.md) | How to test a real checkout without the full catalog — and a money-safety note (this is the live account) |
 | [`docs/payment-gateway-comparison.md`](docs/payment-gateway-comparison.md) | MyFatoorah vs. Tap vs. PayTabs vs. Telr — the permanent-choice decision, still open |
 | [`docs/catalog-import.md`](docs/catalog-import.md) | How the raw supplier product list becomes a Matrixify-ready import |
+| [`docs/shipping-setup.md`](docs/shipping-setup.md) | Real shipping rates (local drivers, Kuwait + GCC) and exact Shopify Admin setup steps |
 | [`content/legal/README.md`](content/legal/README.md) | Terms, Privacy, and Refund/Shipping policy drafts — status and what needs legal review |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | Branching, workflow, and commit conventions |
 | [`CHANGELOG.md`](CHANGELOG.md) | Notable changes to this repository, by date |
@@ -125,6 +126,7 @@ docs/seo/            SEO Content Writer agent output — keyword strategy, conte
 - **Theme in place:** Shopify's Dawn v16.0.0, vendored in full at the repo root, with RTL wired at the document level (`dir="rtl"`/`dir="ltr"` follows the active storefront language automatically) — see [`THEME.md`](THEME.md). It's unbranded — no logo/colors/fonts yet.
 - **Store connected.** `9gucqc-qy.myshopify.com` is linked to this repo via Shopify's native GitHub integration (deployment doesn't go through the Shopify API — Claude's session can't reach it — the store pulls from this repo instead; see [`docs/deployment.md`](docs/deployment.md)). Preview confirmed working.
 - **Payments live (interim):** MyFatoorah confirmed, reusing the existing Klinq merchant account so checkout isn't blocked on a fresh KYC application — see [`docs/payments-setup.md`](docs/payments-setup.md) for setup steps and a compliance heads-up (one account now serving two storefronts). The *permanent* gateway choice is still open.
+- **Shipping confirmed:** local drivers, 1.5 KWD within Kuwait / 5.5 KWD rest of GCC — see [`docs/shipping-setup.md`](docs/shipping-setup.md) for the Shopify Admin setup steps (still needs Faisal/Amal to enter the rates — this session has no Admin access).
 - **Now the only real blocker:** brand kit (name, logo, color palette) from Amal — theme, RTL wiring, and store connection are all in place and waiting on it.
 - **Long lead time, start now regardless:** WhatsApp Business API approval.
 

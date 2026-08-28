@@ -2,14 +2,16 @@
 
 ## Courier selection matrix
 
-Placeholder structure — fill in once the launch country(ies) and courier shortlist are confirmed (`docs/setup-checklist.md`, owner: Faisal).
+**Confirmed (2026-08-28):** fulfillment is via **local drivers**, not a third-party courier account (Aramex/iMile shortlist below is dropped — not the chosen model). Rates confirmed by Faisal: see `docs/shipping-setup.md` for the exact Shopify Admin setup steps.
 
-| Zone/Country | Primary courier | Backup courier | Target SLA | Cost tier | Notes |
-|---|---|---|---|---|---|
-| {{country_1}} | {{TBD}} | {{TBD}} | {{TBD}} | {{TBD}} | |
-| {{country_2}} | {{TBD}} | {{TBD}} | {{TBD}} | {{TBD}} | |
+| Zone | Fulfillment | Rate | Target SLA | Notes |
+|---|---|---|---|---|
+| Kuwait | Local drivers | 1.5 KWD | TBD — set once real delivery patterns are observed | Primary market |
+| Rest of GCC (Saudi, UAE, Qatar, Bahrain, Oman) | Local drivers | 5.5 KWD | TBD | Single combined zone for now — split per-country later if SLA/reliability differs enough to justify it |
 
-Candidates per the roadmap: **Aramex, iMile, or a local GCC courier**. Selection criteria once the shortlist is real:
+Because this is local drivers rather than a courier API/app, there's no automatic tracking-number sync (no Aramex/iMile-style webhook) — order-to-driver assignment and delivery-status updates are a manual/operational process until a local-delivery management tool is added, if ever needed. See `docs/shipping-setup.md` for what that means day-to-day.
+
+~~Candidates per the roadmap: Aramex, iMile, or a local GCC courier~~ — resolved: local drivers chosen. Selection criteria below kept for reference in case a third-party courier gets added later (e.g. for zones local drivers can't reach):
 - Coverage of the launch country/zone
 - Cost per shipment at expected order volume
 - Native Shopify app / API quality (affects how much custom integration work is needed — see `docs/integrations.md`)
@@ -27,6 +29,8 @@ Candidates per the roadmap: **Aramex, iMile, or a local GCC courier**. Selection
 | Return-to-sender | Order flagged for restock or reship decision | "Your order is being returned to us — we'll reach out to arrange redelivery or refund" | Human agent |
 
 ## Status-sync mapping (spec, not yet wired)
+
+**Note:** this table assumes an automated courier status feed. With local drivers (confirmed model above), these transitions are triggered manually by whoever manages dispatch (Amal/ops), not by a webhook — the target Shopify order status and customer message per step are still the right spec to follow by hand.
 
 | Courier status | Shopify order status | Customer notification |
 |---|---|---|

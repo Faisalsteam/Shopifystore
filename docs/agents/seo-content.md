@@ -29,7 +29,7 @@ Write and structure every piece of on-site and blog content — Arabic-first, En
 | [`docs/seo/sample-blog-en.md`](../seo/sample-blog-en.md) | Sample English blog post |
 | [`docs/seo/sample-blog-ar.md`](../seo/sample-blog-ar.md) | Sample Arabic blog post |
 
-**First real batch landed:** grounded in the actual 2,855-item catalog (concentration split, top-20-brand frequency, 3 fully worked product descriptions on real SKUs). One real finding worth Amal's attention: **~59% of the catalog (~1,678 items) has no gender label in the source data** — flagged, not guessed at; see `docs/seo/keyword-strategy.md`. Still placeholder: brand voice (blocked on the Designer brief) and anything needing scent-note data (not in the supplier parse, never fabricated).
+**First real batch landed:** grounded in the actual 2,855-item catalog (concentration split, top-20-brand frequency, 3 fully worked product descriptions on real SKUs). **Correction (2026-08-28):** the batch's first pass undercounted gender labeling due to a parser bug — corrected numbers show **87.1% of the catalog is gender-labeled** (only 367 items, 12.9%, actually unlabeled), the opposite of what was first reported; see the correction note in `docs/seo/keyword-strategy.md`. Real remaining gaps worth Amal's attention: those 367 unlabeled items, plus 372 items (13.0%) with no concentration keyword in the name — both flagged, not guessed at. Still placeholder: brand voice (blocked on the Designer brief) and anything needing scent-note data (not in the supplier parse, never fabricated).
 
 ## Blocked on → unlocks at
 

@@ -6,9 +6,9 @@ Last updated: [set on publish]
 
 ## Shipping
 
-- **Countries served:** [to be completed based on the launch-country decision — see `docs/setup-checklist.md`].
-- **Shipping fees:** calculated by country and weight, shown clearly before checkout.
-- **Estimated delivery time:** [to be completed based on the confirmed courier partner].
+- **Countries served:** [to be completed based on the launch-country decision — see `docs/setup-checklist.md`]. All GCC markets are the confirmed launch scope; per-country availability still depends on the payment gateway/courier coverage decision.
+- **Shipping fees:** flat rate by zone — **1.5 KWD within Kuwait, 5.5 KWD for the rest of the GCC** (delivered by local drivers) — shown clearly before checkout. See `docs/shipping-setup.md`.
+- **Estimated delivery time:** [to be completed once real local-driver delivery patterns are observed].
 - **Order tracking:** a tracking link is sent by email and/or WhatsApp once the order ships.
 - If a shipment is unusually delayed, contact us at [email] or [WhatsApp].
 

@@ -14,7 +14,7 @@ Live blocker list, by owner. Check items off in PRs/issues as they close — thi
 
 - [x] ~~Which GCC country(ies) launch first~~ — confirmed: **all GCC markets**. Still open: which gateway(s)/courier(s) actually cover all six at acceptable cost, see `docs/integrations.md`
 - [x] ~~Payment gateway~~ — **MyFatoorah activated and live** (confirmed 2026-08-28), reusing the existing Klinq MyFatoorah merchant account until the brand name lands — see `docs/payments-setup.md` (compliance heads-up still worth a look: one account now serving two storefronts). Whether it stays permanent is still open — see `docs/payment-gateway-comparison.md`. **Next:** a real test order to confirm the charge actually completes end to end — no products exist yet to test with, see `docs/testing-checkout.md` for how to test with one throwaway product instead of waiting on the full catalog (important money-safety note in there too — this is the live account, not a sandbox).
-- [ ] Shipping/courier shortlist confirmed (Aramex / iMile / local courier) — same, full-GCC coverage
+- [x] ~~Shipping/courier shortlist confirmed~~ — **local drivers** (not a third-party courier), rates confirmed: 1.5 KWD within Kuwait, 5.5 KWD rest of GCC — see `docs/shipping-setup.md` for the exact Shopify Admin setup steps and `docs/dispatch/courier-matrix.md` for the operational model. **Still needed:** actually entering these rates in Shopify Admin (Faisal/Amal, few minutes) — this session has no Admin access to do it directly, same restriction as payments.
 - [ ] Taxes
 - [ ] Packaging supplier + costing
 - [ ] Initial + monthly budget envelope
@@ -63,6 +63,6 @@ Five AI agents (`docs/agents/`) are producing drafts, specs, and templates that 
 
 - Designer → `docs/design/` (theme + store connection cleared — only final color/logo values still need brand kit)
 - Chatbot / Call Center → `docs/support/` (needs: WhatsApp Business API + BSP)
-- Dispatcher → `docs/dispatch/` (needs: launch country, courier account)
+- Dispatcher → `docs/dispatch/` (launch country + fulfillment model cleared — local drivers, rates set, see `docs/shipping-setup.md`; still needs the rates actually entered in Shopify Admin)
 - Marketing Agency → `docs/marketing/` (needs: Klaviyo, WhatsApp BSP, social/Prisync accounts)
 - SEO Content Writer (AR/EN) → `docs/seo/` (master catalog cleared — now drafting real per-brand-line content)
