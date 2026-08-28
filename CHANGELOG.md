@@ -4,6 +4,9 @@ Notable changes to this repository. Dates are UTC.
 
 ## Unreleased
 
+### Confirmed — 2026-08-28
+- MyFatoorah **activated and live** on the store (`docs/payments-setup.md`), reusing the existing Klinq merchant account as an interim measure until the new brand name lands. Checkout is unblocked. Docs updated across `docs/setup-checklist.md`, `docs/integrations.md`, `docs/payment-gateway-comparison.md`, `docs/architecture.md`, `README.md`, and `docs/support/faq.md` (real payment-methods answer now, no longer a placeholder). Flagged, not resolved: confirming with MyFatoorah that one account serving two differently-branded storefronts is fine, and that settlement reports will mix both stores' revenue until split out.
+
 ### Added — 2026-08-22 (parallel workstreams)
 - `docs/payment-gateway-comparison.md` — MyFatoorah / Tap Payments / PayTabs / Telr compared across all six GCC countries (coverage, local rails, reported fees, onboarding), with sourcing caveats and a recommendation to request direct rate quotes given the low reliability of third-party GCC payment-gateway pricing blogs.
 - `content/legal/` — bilingual (Arabic-first, English-adapted) draft Terms & Conditions, Privacy Policy, and Refund & Shipping Policy, grounded in Kuwait's Consumer Protection Law No. 39/2014. Explicitly flagged as drafts pending review by a licensed Kuwait/GCC lawyer; a newer "Decree 10/2026" claim found during research was deliberately excluded as unconfirmed (single, non-authoritative source) — see `content/legal/README.md`.

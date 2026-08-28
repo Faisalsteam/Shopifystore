@@ -13,7 +13,7 @@ Live blocker list, by owner. Check items off in PRs/issues as they close — thi
 ## Faisal — feeds Phase 0 (merchant/courier setup) and Phase 3 (localization)
 
 - [x] ~~Which GCC country(ies) launch first~~ — confirmed: **all GCC markets**. Still open: which gateway(s)/courier(s) actually cover all six at acceptable cost, see `docs/integrations.md`
-- [x] ~~Payment gateway~~ — **MyFatoorah confirmed as an interim solution**, reusing the existing Klinq MyFatoorah merchant account until the brand name lands — see `docs/payments-setup.md` for setup steps and a compliance heads-up (one account now serving two storefronts). Whether it stays permanent is still open — see `docs/payment-gateway-comparison.md`.
+- [x] ~~Payment gateway~~ — **MyFatoorah activated and live** (confirmed 2026-08-28), reusing the existing Klinq MyFatoorah merchant account until the brand name lands — see `docs/payments-setup.md` (compliance heads-up still worth a look: one account now serving two storefronts). Whether it stays permanent is still open — see `docs/payment-gateway-comparison.md`. **Next:** a real test order on staging to confirm the charge actually completes end to end.
 - [ ] Shipping/courier shortlist confirmed (Aramex / iMile / local courier) — same, full-GCC coverage
 - [ ] Taxes
 - [ ] Packaging supplier + costing

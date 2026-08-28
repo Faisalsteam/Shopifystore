@@ -1,17 +1,19 @@
 # Payment Gateway Setup — MyFatoorah (Interim)
 
-**Status: interim decision.** MyFatoorah confirmed as the payment gateway to get checkout working now, reusing the existing MyFatoorah merchant account already set up for Klinq (the other/sister store), until the new store's brand name is finalized. This unblocks checkout immediately instead of waiting on a fresh merchant KYC application — see the heads-up below before treating this as permanent.
+**Status: activated and live** (confirmed 2026-08-28). MyFatoorah is set up on the store, reusing the existing MyFatoorah merchant account already set up for Klinq (the other/sister store), until the new store's brand name is finalized. Checkout is unblocked — no waiting on a fresh merchant KYC application. See the heads-up below; it's not retracted just because setup is done — worth confirming with MyFatoorah at some point even though activation already went through.
 
 This is an **Admin-side setup, not a code change** — Shopify's payment apps configure entirely in Settings, nothing in this repo needs to change for checkout itself to work. Claude's development session can't do this step directly (network policy blocks direct access to `*.myshopify.com`, same reason covered in `docs/deployment.md`) — it needs to be done by whoever has the Shopify admin login.
 
-## Setup steps (Amal or Faisal, in the Shopify admin)
+## Setup steps (done — kept here for reference)
 
-1. Go to the [MyFatoorah app on the Shopify App Store](https://apps.shopify.com/myfatoorah) and click **Add app**.
-2. Confirm installation on `9gucqc-qy.myshopify.com`.
-3. You'll be redirected to a MyFatoorah login screen — **log in with the existing Klinq MyFatoorah account credentials** (this is the "reuse the existing account" step).
-4. Choose which payment icons/methods to display at checkout (cards, KNET, mada, Benefit, etc. — MyFatoorah shows the right local method automatically based on the customer's country).
-5. Click **Activate MyFatoorah**.
-6. Confirm it now appears under **Shopify Admin → Settings → Payments**.
+1. ~~Go to the [MyFatoorah app on the Shopify App Store](https://apps.shopify.com/myfatoorah) and click **Add app**.~~
+2. ~~Confirm installation on `9gucqc-qy.myshopify.com`.~~
+3. ~~Log in with the existing Klinq MyFatoorah account credentials.~~
+4. ~~Choose which payment icons/methods to display at checkout.~~
+5. ~~Click **Activate MyFatoorah**.~~
+6. ~~Confirm it appears under **Shopify Admin → Settings → Payments**.~~
+
+All done. Worth a real test order on staging before Amal approves anything for the live theme (per `CONTRIBUTING.md`) — activation being live isn't the same as a confirmed, working end-to-end charge.
 
 No API keys need to be pasted into this repo or anywhere in the theme — the whole integration lives in Shopify's payment settings, hosted by MyFatoorah's checkout page (keeps card data out of PCI scope, per `docs/roadmap.md` Phase 3).
 
