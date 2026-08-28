@@ -39,6 +39,59 @@
         "show_text_below": false
       }
     },
+    "trust_badges": {
+      "type": "multicolumn",
+      "blocks": {
+        "badge-authentic": {
+          "type": "column",
+          "settings": {
+            "title": "منتجات أصلية 100% / 100% Authentic",
+            "text": "<p>كل منتج مضمون الأصالة من ماركات عالمية معروفة. / Every product is guaranteed genuine from recognized global brands.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "badge-delivery": {
+          "type": "column",
+          "settings": {
+            "title": "توصيل سريع لكل الخليج / Fast GCC Delivery",
+            "text": "<p>١.٥ د.ك داخل الكويت، ٥.٥ د.ك لباقي دول الخليج، عبر سائقين محليين. / 1.5 KWD within Kuwait, 5.5 KWD rest of GCC, via local drivers.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "badge-payment": {
+          "type": "column",
+          "settings": {
+            "title": "دفع آمن / Secure Payment",
+            "text": "<p>الدفع الآمن عبر KNET، مدى، وبطاقات الائتمان. / Secure checkout via KNET, mada, and credit cards.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "badge-authentic",
+        "badge-delivery",
+        "badge-payment"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "color_scheme": "scheme-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -70,6 +123,7 @@
   },
   "order": [
     "image_banner",
+    "trust_badges",
     "featured_collection"
   ]
 }

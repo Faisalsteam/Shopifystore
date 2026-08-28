@@ -8,8 +8,8 @@
         "color_scheme": "scheme-1",
         "show_line_separator": true,
         "show_social": false,
-        "auto_rotate": false,
-        "change_slides_speed": 5,
+        "auto_rotate": true,
+        "change_slides_speed": 6,
         "enable_country_selector": false,
         "enable_language_selector": false
       },
@@ -17,7 +17,16 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
+            "text": "🚚 توصيل الكويت 1.5 د.ك · باقي الخليج 5.5 د.ك — Kuwait 1.5 KWD · Rest of GCC 5.5 KWD",
+            "text_alignment": "center",
+            "color_scheme": "scheme-1",
+            "link": ""
+          }
+        },
+        "announcement-bar-1": {
+          "type": "announcement",
+          "settings": {
+            "text": "✅ منتجات أصلية 100% — 100% Authentic Products",
             "text_alignment": "center",
             "color_scheme": "scheme-1",
             "link": ""
@@ -25,7 +34,8 @@
         }
       },
       "block_order": [
-        "announcement-bar-0"
+        "announcement-bar-0",
+        "announcement-bar-1"
       ]
     },
     "header": {
