@@ -13,7 +13,7 @@ Live blocker list, by owner. Check items off in PRs/issues as they close — thi
 ## Faisal — feeds Phase 0 (merchant/courier setup) and Phase 3 (localization)
 
 - [x] ~~Which GCC country(ies) launch first~~ — confirmed: **all GCC markets**. Still open: which gateway(s)/courier(s) actually cover all six at acceptable cost, see `docs/integrations.md`
-- [ ] Payment gateway shortlist confirmed (MyFatoorah / Tap / PayTabs / Telr) — comparison ready in `docs/payment-gateway-comparison.md`, decision + direct rate quotes still needed
+- [x] ~~Payment gateway~~ — **MyFatoorah confirmed as an interim solution**, reusing the existing Klinq MyFatoorah merchant account until the brand name lands — see `docs/payments-setup.md` for setup steps and a compliance heads-up (one account now serving two storefronts). Whether it stays permanent is still open — see `docs/payment-gateway-comparison.md`.
 - [ ] Shipping/courier shortlist confirmed (Aramex / iMile / local courier) — same, full-GCC coverage
 - [ ] Taxes
 - [ ] Packaging supplier + costing
@@ -50,7 +50,7 @@ All bilingual (AR/EN), written Arabic-first.
 - [ ] Once the store connection syncs this branch: Amal, turn on the WhatsApp button in the theme customizer (Theme settings → WhatsApp button) and enter the real support number — it works today with no other setup
 - [ ] Once a Klaviyo account exists: paste the Public API Key into Theme settings → Integrations → Klaviyo — onsite tracking/forms turn on immediately, no code changes needed
 - [ ] Klaviyo API key
-- [ ] Payment gateway API credentials (after merchant approval)
+- [x] ~~Payment gateway API credentials~~ — not needed in this repo at all; MyFatoorah configures entirely in Shopify Admin → Settings → Payments, see `docs/payments-setup.md`
 - [ ] WhatsApp BSP (Zoko/WATI) API credentials
 - [ ] Google Maps API key
 - [x] ~~Master product catalog~~ — 2,855-row supplier list received and parsed into a Matrixify-ready draft workbook (English fields, Arabic title draft, review-flags sheet); delivered directly, not committed to this repo per the Google Sheets convention below — see `docs/catalog-import.md` for the methodology. Still needed: prices, inventory counts, and product photos (not something that can be generated — see that doc)

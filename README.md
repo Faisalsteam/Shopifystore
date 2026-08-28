@@ -70,7 +70,7 @@ flowchart LR
 |---|---|---|
 | Storefront | Shopify (Online Store 2.0), RTL-ready theme | Arabic-first, English secondary |
 | Catalog | Matrixify + Google Sheets master catalog | Owned by Amal, outside this repo |
-| Payments | Regional gateway — MyFatoorah / Tap / PayTabs / Telr | Hosted checkout, keeps card data out of PCI scope |
+| Payments | MyFatoorah (interim, see `docs/payments-setup.md`) — permanent choice still open, see `docs/payment-gateway-comparison.md` | Hosted checkout, keeps card data out of PCI scope |
 | CRM / email | Klaviyo | Native Shopify integration |
 | Messaging | WhatsApp Business API + Zoko/WATI | Automated templated messages, checkout links in-chat |
 | Delivery | Third-party courier (Aramex / iMile / local) at launch | In-house delivery app is a later, separate build |
@@ -109,7 +109,8 @@ docs/seo/            SEO Content Writer agent output — keyword strategy, conte
 | [`docs/agents/`](docs/agents/README.md) | Charters for the 5 AI agent roles and how they operate unattended |
 | [`THEME.md`](THEME.md) | The Shopify theme itself — base, status, directory structure |
 | [`docs/deployment.md`](docs/deployment.md) | How the theme reaches the actual store (GitHub → Shopify), setup steps, branch mapping |
-| [`docs/payment-gateway-comparison.md`](docs/payment-gateway-comparison.md) | MyFatoorah vs. Tap vs. PayTabs vs. Telr across all GCC markets |
+| [`docs/payments-setup.md`](docs/payments-setup.md) | MyFatoorah interim setup (live now) — steps and a compliance heads-up |
+| [`docs/payment-gateway-comparison.md`](docs/payment-gateway-comparison.md) | MyFatoorah vs. Tap vs. PayTabs vs. Telr — the permanent-choice decision, still open |
 | [`docs/catalog-import.md`](docs/catalog-import.md) | How the raw supplier product list becomes a Matrixify-ready import |
 | [`content/legal/README.md`](content/legal/README.md) | Terms, Privacy, and Refund/Shipping policy drafts — status and what needs legal review |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | Branching, workflow, and commit conventions |
@@ -122,8 +123,9 @@ docs/seo/            SEO Content Writer agent output — keyword strategy, conte
 - **Launch scope confirmed:** all GCC markets (not a single-country launch)
 - **Theme in place:** Shopify's Dawn v16.0.0, vendored in full at the repo root, with RTL wired at the document level (`dir="rtl"`/`dir="ltr"` follows the active storefront language automatically) — see [`THEME.md`](THEME.md). It's unbranded — no logo/colors/fonts yet.
 - **Store connected.** `9gucqc-qy.myshopify.com` is linked to this repo via Shopify's native GitHub integration (deployment doesn't go through the Shopify API — Claude's session can't reach it — the store pulls from this repo instead; see [`docs/deployment.md`](docs/deployment.md)). Preview confirmed working.
+- **Payments live (interim):** MyFatoorah confirmed, reusing the existing Klinq merchant account so checkout isn't blocked on a fresh KYC application — see [`docs/payments-setup.md`](docs/payments-setup.md) for setup steps and a compliance heads-up (one account now serving two storefronts). The *permanent* gateway choice is still open.
 - **Now the only real blocker:** brand kit (name, logo, color palette) from Amal — theme, RTL wiring, and store connection are all in place and waiting on it.
-- **Long lead time, start now regardless:** WhatsApp Business API approval and payment gateway merchant KYC — now evaluated against all-GCC coverage, not one country.
+- **Long lead time, start now regardless:** WhatsApp Business API approval.
 
 See [`docs/setup-checklist.md`](docs/setup-checklist.md) for the complete, owner-tagged list.
 

@@ -13,10 +13,10 @@ A (EN): Choose your product, select size/volume, add to cart, then complete paym
 ## Payment
 
 **Q (AR): وش طرق الدفع المتوفرة؟**
-A (AR): {{payment_methods — يُحدَّث بعد اختيار بوابة الدفع، انظر docs/integrations.md}}
+A (AR): نقبل البطاقات الائتمانية/بطاقات الخصم، بالإضافة إلى وسيلة الدفع المحلية لدولتك (مثل KNET بالكويت، مدى بالسعودية، Benefit بالبحرين) — تظهر تلقائيًا حسب بلدك عند الدفع.
 
 **Q (EN): What payment methods do you accept?**
-A (EN): {{payment_methods — to be filled once the payment gateway is chosen, see docs/integrations.md}}
+A (EN): We accept credit/debit cards, plus your country's local payment method (e.g. KNET in Kuwait, mada in Saudi Arabia, Benefit in Bahrain) — shown automatically based on your country at checkout.
 
 ## Shipping & delivery
 
@@ -58,4 +58,4 @@ A (EN): Reach us on WhatsApp at {{whatsapp_number}} or by email at {{support_ema
 
 ---
 
-Items in `{{double braces}}` are placeholders pending decisions still open in `docs/setup-checklist.md` and `docs/integrations.md` (payment gateway, courier/country breakdown, WhatsApp number). The 14-day return window above is filled in from `content/legal/{ar,en}/refund-shipping-policy.md` — that draft is grounded in Kuwait Law No. 39/2014 but still needs a licensed lawyer's sign-off before publishing (see `content/legal/README.md`), so treat "14" as highly likely but not 100% final until that review lands. Terms & Conditions and Privacy Policy are separate required legal documents (also listed in `docs/setup-checklist.md`) — not covered by this FAQ.
+Items in `{{double braces}}` are placeholders pending decisions still open in `docs/setup-checklist.md` and `docs/integrations.md` (courier/country breakdown, WhatsApp number). The 14-day return window above is filled in from `content/legal/{ar,en}/refund-shipping-policy.md` — that draft is grounded in Kuwait Law No. 39/2014 but still needs a licensed lawyer's sign-off before publishing (see `content/legal/README.md`), so treat "14" as highly likely but not 100% final until that review lands. The payment-methods answer is filled in for real now that MyFatoorah is live (interim) — see `docs/payments-setup.md`. Terms & Conditions and Privacy Policy are separate required legal documents (also listed in `docs/setup-checklist.md`) — not covered by this FAQ.

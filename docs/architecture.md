@@ -4,7 +4,7 @@
 
 - **Storefront**: Shopify Online Store 2.0 theme, RTL-ready (Arabic-first, English secondary)
 - **Catalog management**: Matrixify app + a Google Sheet master catalog (owned by Amal, outside this repo)
-- **Payments**: hosted checkout via a regional gateway (MyFatoorah / Tap / PayTabs / Telr) — no custom payment form, keeps card data out of PCI scope
+- **Payments**: hosted checkout via MyFatoorah (interim, live now — `docs/payments-setup.md`; permanent choice still open among MyFatoorah/Tap/PayTabs/Telr, `docs/payment-gateway-comparison.md`) — no custom payment form, keeps card data out of PCI scope
 - **CRM/marketing**: Klaviyo (native Shopify integration) + Shopify Flow for simple trigger wiring
 - **WhatsApp**: WhatsApp Business API + a BSP app (Zoko or WATI); anything beyond Flow's simple rules is custom webhook code living in this repo
 - **Delivery**: third-party courier integration at launch; a custom in-house delivery/tracking app is a later, separate build once volume justifies it

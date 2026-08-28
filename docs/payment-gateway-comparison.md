@@ -1,5 +1,7 @@
 # Payment Gateway Comparison — All GCC Markets
 
+**Update:** MyFatoorah is now live as an *interim* gateway (reusing the existing Klinq merchant account) — see `docs/payments-setup.md` for setup steps and a compliance heads-up. This comparison stays relevant for the *permanent* decision, still open, once the brand name lands.
+
 Researched 2026-08-22 to support the decision in `docs/setup-checklist.md`. **Treat every fee figure here as indicative, not final** — a lot of the sources for GCC payment-gateway pricing are SEO-content blogs of inconsistent quality, not the providers' own pricing pages. Confirm actual rates directly with each provider's sales team before signing anything; rates are usually negotiable by volume anyway.
 
 ## Coverage at a glance
