@@ -13,7 +13,7 @@ This is an **Admin-side setup, not a code change** — Shopify's payment apps co
 5. ~~Click **Activate MyFatoorah**.~~
 6. ~~Confirm it appears under **Shopify Admin → Settings → Payments**.~~
 
-All done. Worth a real test order on staging before Amal approves anything for the live theme (per `CONTRIBUTING.md`) — activation being live isn't the same as a confirmed, working end-to-end charge.
+All done. Worth a real test order on staging before Amal approves anything for the live theme (per `CONTRIBUTING.md`) — activation being live isn't the same as a confirmed, working end-to-end charge. No products exist yet to test with — see `docs/testing-checkout.md` for how to test without waiting on the real catalog (and an important money-safety note before placing any test order on this live account).
 
 No API keys need to be pasted into this repo or anywhere in the theme — the whole integration lives in Shopify's payment settings, hosted by MyFatoorah's checkout page (keeps card data out of PCI scope, per `docs/roadmap.md` Phase 3).
 

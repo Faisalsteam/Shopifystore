@@ -110,6 +110,7 @@ docs/seo/            SEO Content Writer agent output — keyword strategy, conte
 | [`THEME.md`](THEME.md) | The Shopify theme itself — base, status, directory structure |
 | [`docs/deployment.md`](docs/deployment.md) | How the theme reaches the actual store (GitHub → Shopify), setup steps, branch mapping |
 | [`docs/payments-setup.md`](docs/payments-setup.md) | MyFatoorah interim setup (live now) — steps and a compliance heads-up |
+| [`docs/testing-checkout.md`](docs/testing-checkout.md) | How to test a real checkout without the full catalog — and a money-safety note (this is the live account) |
 | [`docs/payment-gateway-comparison.md`](docs/payment-gateway-comparison.md) | MyFatoorah vs. Tap vs. PayTabs vs. Telr — the permanent-choice decision, still open |
 | [`docs/catalog-import.md`](docs/catalog-import.md) | How the raw supplier product list becomes a Matrixify-ready import |
 | [`content/legal/README.md`](content/legal/README.md) | Terms, Privacy, and Refund/Shipping policy drafts — status and what needs legal review |
