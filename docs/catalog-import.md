@@ -33,6 +33,8 @@ Every flagged row is listed on the output workbook's **Review flags** sheet with
 
 Not something an AI can responsibly produce for a real commercial catalog — these need to be actual photos of the actual products, either supplier-provided (with usage rights confirmed) or shot directly. Once available, name them `<SKU>-1.jpg`, `<SKU>-2.jpg`, etc., 2000px+ on the long edge, per the field spec in `docs/roadmap.md` (Phase 2), and drop the filename into the Image Src column.
 
+**What's safe to use meanwhile:** a single generic, neutral "photo coming soon" placeholder — `assets/placeholder-product-image.png` in this repo — for products with no real photo yet. It's an abstract bottle outline in the site's burgundy accent color with "Product Photo Coming Soon" / "صورة المنتج قريبًا" text; it doesn't depict any specific product or brand, so it can't misrepresent what a customer is buying. This is different from generating a fake photo *of* a specific SKU (e.g. an invented "photo" of Chanel Coco) — that would misrepresent a real branded product and was declined for that reason. Use the placeholder as every draft-import row's Image Src until real photos exist for that row, then swap it out per-SKU.
+
 ## Output
 
 A 4-sheet workbook: **Read Me** (this summary, inline), **Products (Matrixify import)** (English, Matrixify's column format), **Arabic draft** (for Shopify's Translate & Adapt app or Matrixify's translation import), **Review flags**. Delivered directly, not committed to this repo.
