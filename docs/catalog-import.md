@@ -37,6 +37,21 @@ Not something an AI can responsibly produce for a real commercial catalog — th
 
 A 4-sheet workbook: **Read Me** (this summary, inline), **Products (Matrixify import)** (English, Matrixify's column format), **Arabic draft** (for Shopify's Translate & Adapt app or Matrixify's translation import), **Review flags**. Delivered directly, not committed to this repo.
 
+## How to actually import it (Amal or Faisal, in Shopify Admin)
+
+Claude's development session can't do this step directly — same network restriction covered in `docs/deployment.md` and `docs/payments-setup.md`. This is a few minutes of admin work:
+
+1. Install the [Matrixify app](https://apps.shopify.com/excel-export-import) from the Shopify App Store (free for imports up to a certain size, paid tiers for larger/scheduled ones — check current pricing against the 2,855-row size).
+2. In Matrixify, choose **Import** → upload the **Products (Matrixify import)** sheet from the delivered workbook.
+3. On the column-mapping screen, Matrixify should auto-match the headers (Handle, Title, Vendor, Tags, Variant SKU, etc.) since they follow its standard format — review the mapping once before confirming, don't just click through.
+4. Run the import.
+
+**Every row imports as `Published: FALSE` / `Status: draft` on purpose** — nothing becomes visible or purchasable on the storefront from this import alone. That's deliberate: there's no real price yet (see *What's deliberately left blank* above), so importing live would either reject the rows or let them show as free. Draft import is safe to do now, before prices/photos exist — it gets the catalog structure (2,855 real products, correctly tagged/typed) into Shopify so collections, the theme, and layout can be worked against real data instead of nothing.
+
+**This is not the same as having a sellable product.** For testing checkout/payments specifically, use the separate throwaway-product method in `docs/testing-checkout.md` instead — a draft product with no price won't exercise a real payment.
+
+Once real prices/inventory/photos exist, re-run the same import (Matrixify updates existing rows by Handle/SKU rather than duplicating) and flip `Published`/`Status` to make them live, per the batch-by-product-line approach in `docs/roadmap.md` Phase 2.
+
 ## Scaling the Arabic dictionary
 
 The brand/term dictionaries cover the highest-frequency words in the current list (~68% of rows got a dictionary-confident brand match on the first pass). If a new supplier list introduces a lot of newly-flagged brands, the dictionary in the build script is the thing to extend — not a reason to hand-translate 2,855 rows from scratch each time.
