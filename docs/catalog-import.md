@@ -33,7 +33,15 @@ Every flagged row is listed on the output workbook's **Review flags** sheet with
 
 Not something an AI can responsibly produce for a real commercial catalog — these need to be actual photos of the actual products, either supplier-provided (with usage rights confirmed) or shot directly. Once available, name them `<SKU>-1.jpg`, `<SKU>-2.jpg`, etc., 2000px+ on the long edge, per the field spec in `docs/roadmap.md` (Phase 2), and drop the filename into the Image Src column.
 
-**What's safe to use meanwhile:** a single generic, neutral "photo coming soon" placeholder — `assets/placeholder-product-image.png` in this repo — for products with no real photo yet. It's an abstract bottle outline in the site's burgundy accent color with "Product Photo Coming Soon" / "صورة المنتج قريبًا" text; it doesn't depict any specific product or brand, so it can't misrepresent what a customer is buying. This is different from generating a fake photo *of* a specific SKU (e.g. an invented "photo" of Chanel Coco) — that would misrepresent a real branded product and was declined for that reason. Use the placeholder as every draft-import row's Image Src until real photos exist for that row, then swap it out per-SKU.
+**What's safe to use meanwhile:** a single generic, neutral "photo coming soon" placeholder — `assets/placeholder-product-image.png` in this repo — for products with no real photo yet. It's an abstract bottle outline in the site's burgundy accent color with "Product Photo Coming Soon" / "صورة المنتج قريبًا" text; it doesn't depict any specific product or brand, so it can't misrepresent what a customer is buying. This is different from generating a fake photo *of* a specific SKU (e.g. an invented "photo" of Chanel Coco) — that would misrepresent a real branded product and was declined for that reason.
+
+The v2 draft workbook (delivered directly, not committed) has every row's Image Src pre-filled with `placeholder-product-image.png` on this basis. **That's a filename, not a working URL yet** — Matrixify's Image Src column needs a real, publicly reachable URL. One extra step before importing:
+
+1. In Shopify Admin, go to **Content → Files → Upload files**, upload `assets/placeholder-product-image.png` from this repo (or pull it from the connected GitHub branch).
+2. Copy the file's CDN URL that Shopify generates (right-click the uploaded file → Copy link, or click it to see the URL — looks like `https://cdn.shopify.com/s/files/.../placeholder-product-image.png`).
+3. In the workbook, find-and-replace `placeholder-product-image.png` with that real URL across the whole Image Src column before running the Matrixify import.
+
+Once real per-SKU photos exist, re-run the import for that batch with the real photo URL in Image Src — Matrixify updates by Handle/SKU rather than duplicating, so this doesn't create a second product.
 
 ## Output
 
@@ -53,6 +61,15 @@ Claude's development session can't do this step directly — same network restri
 **This is not the same as having a sellable product.** For testing checkout/payments specifically, use the separate throwaway-product method in `docs/testing-checkout.md` instead — a draft product with no price won't exercise a real payment.
 
 Once real prices/inventory/photos exist, re-run the same import (Matrixify updates existing rows by Handle/SKU rather than duplicating) and flip `Published`/`Status` to make them live, per the batch-by-product-line approach in `docs/roadmap.md` Phase 2.
+
+## v2: full descriptions + Smart Collections sheet
+
+The first draft workbook had a one-line SEO description per row. The v2 workbook (also delivered directly, not committed) adds:
+
+- **Full product descriptions** for all 2,855 rows in both the Products sheet (English, Matrixify's `Body (HTML)` column) and the Arabic draft sheet — a hook line, a factual paragraph, and a bullet list (size/concentration/category), following the same template and no-fabrication rules as `docs/seo/content-templates.md`. Where scent family or occasion isn't in the source data, the description says so explicitly (`[needs input from category team — not in supplier data]`) rather than inventing it.
+- **A Smart Collections sheet** (31 collections): one row per distinct concentration, per gender, and for the top-20 brands by catalog count — the same real numbers as `docs/seo/keyword-strategy.md` and `docs/seo/category-pages.md`. Columns follow Matrixify's documented Smart Collections import format (`Handle, Title, Body HTML, Must Match, Rule: Column name, Rule: Relation, Rule: Condition, Published, SEO Title, SEO Description`), each rule matching on the product `Tags` field the Products sheet already sets (e.g. tag `concentration:EDP`, `gender:women`, `brand:Chanel`).
+
+**Import-order caveat:** run the Products import first (so the tags each collection rule depends on actually exist on real products), then Smart Collections. Medium confidence on the exact Smart Collections column format — Matrixify's own docs weren't directly reachable from this session (same network restriction as the rest of Shopify Admin), so this was built from published Matrixify documentation found via search, not verified against a live import. **Test with one collection row first** (delete the other 30 temporarily, import, confirm it creates a working smart collection with the right product count) before running all 31.
 
 ## Scaling the Arabic dictionary
 
